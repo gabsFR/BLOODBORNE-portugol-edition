@@ -1,7 +1,9 @@
 programa
 {
+	inclua biblioteca Texto --> te
 	inclua biblioteca Util
 	inclua biblioteca Teclado --> t
+	cadeia palavra
 	inteiro quant
 	cadeia letra
 	
@@ -17,16 +19,28 @@ cadeia nome
 		escreva("o888bood8P'  o888ooooood8  `Y8bood8P'   `Y8bood8P'  o888bood8P'   o888bood8P'   `Y8bood8P'  o888o  o888o o8o        `8  o888ooooood8 \n\n")
 
 		 escreva("------------------------------------------------------aperte e para começar--------------------------------------------------------\n")
-		leia(letra) 
+		 escreva("ps: para modo texto devagar, aperte p\n")
+		 leia(palavra)
+		  se(palavra == "p"){
+		  	 te.numero_caracteres(palavra)
+
+		    para(inteiro i=0; i < 10; i++){
+		    	letra = te.obter_caracter(palavra, i)
+		    	escreva(letra) Util.aguarde(60)
+		  }
+		  	
+		leia(letra)
+		   
+
+		
            se(letra == "e") {
            	escreva("Qual seu nome?: ")
            	leia(nome)                                                                                                                      
            }
-            escreva("bingus")                                                                                                                         
+            escreva(nome, "...\nque nome intrigante.")                                                                                                                         
 
 	}
 
-	funcao inventario(){
-		//?????
-	}
+	
+}
 }
