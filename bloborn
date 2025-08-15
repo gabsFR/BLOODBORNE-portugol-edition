@@ -19,23 +19,20 @@ programa
 		escreva("o888bood8P'  o888ooooood8  `Y8bood8P'   `Y8bood8P'  o888bood8P'   o888bood8P'   `Y8bood8P'  o888o  o888o o8o        `8  o888ooooood8 \n\n")
 
 		 escreva("------------------------------------------------------aperte e para começar--------------------------------------------------------\n")
-		
-
 		  	
 		leia(letra)
-		   
-
 		
            se(letra == "e") {
-           	escrevaMaquina("Qual seu nome?: ", 50)
+           	escrevaslow("Qual seu nome?: ", 50)
            	leia(nome)                                                                                                                      
            }
-            escrevaMaquina("...\nque nome intrigante.", 50)                                                                                                                         
+            
+            escrevaslow("...que nome intrigante.", 50)                                                                                                                         
 
 	}
 
 
-	funcao escrevaMaquina(cadeia texto, inteiro velocidade)
+	funcao escrevaslow(cadeia texto, inteiro velocidade)
 	{
 	 	para(inteiro i=0; i < t.numero_caracteres(texto); i++)
 	 	{
