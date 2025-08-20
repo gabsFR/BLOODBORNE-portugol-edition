@@ -6,7 +6,7 @@ programa
 	cadeia palavra
 	inteiro quant
 	cadeia letra
-	
+	cadeia cheats
      cadeia nome
 	funcao inicio()
 	{
