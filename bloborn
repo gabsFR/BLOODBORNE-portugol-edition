@@ -3,11 +3,16 @@ programa
 	inclua biblioteca Texto --> t
 	inclua biblioteca Util --> u
 	
-	cadeia palavra
+	cadeia palavra , letra, cheats, nome
 	inteiro quant
-	cadeia letra
-	cadeia cheats
-     cadeia nome
+     inteiro classeStats[6]
+     inteiro classe
+     cadeia equip[2]
+     cadeia yn
+
+	const inteiro VELOCIDADE = 50
+	const inteiro DIALOGO = 70
+     
 	funcao inicio()
 	{
 		escreva("oooooooooo.  ooooo          .oooooo.     .oooooo.   oooooooooo.   oooooooooo.    .oooooo.   ooooooooo.   ooooo      ooo oooooooooooo \n")
@@ -23,14 +28,111 @@ programa
 		leia(letra)
 		
            se(letra == "e") {
-           	escrevaslow("Qual seu nome?: ", 50)
+           	escrevaslow("Qual seu nome?: ", VELOCIDADE)
            	leia(nome)                                                                                                                      
            }
             
-            escrevaslow("...que nome intrigante.", 50)                                                                                                                         
+            escrevaslow("...que nome intrigante.", DIALOGO)
+            escrevaslow("\nQual sua classe?: ", VELOCIDADE)
+            
+            escrevaslow("\n1) Carcereiro de Hemwick\n", VELOCIDADE)
+		  escrevaslow("2) Discípulo da Luz Lunar\n", VELOCIDADE)
+		  escrevaslow("3) Espião de Cainhurst\n", VELOCIDADE)
+		  escrevaslow("4) Primeiro caçador\n", VELOCIDADE)
+		  
 
+		  
+
+		 faca {
+			escreva("informe a classe: ")
+			leia(classe)
+		 	
+			escolha(classe){
+				caso 1:
+				{
+					escreva("Carcereiro de Hemwick: \n")
+					escreva(" vit: 17\n vig: 17 \n for: 19\n dex: 14\n bld: 12\n arc: 12\n")
+					escrevaslow("Deseja escolher esta classe? Y/N: ", DIALOGO)
+					leia(yn)
+						yn = t.caixa_baixa(yn)
+					se(yn == "y"){
+						classeStats[0] = 17
+						classeStats[1] = 17
+						classeStats[2] = 19
+						classeStats[3] = 14
+						classeStats[4] = 12
+						classeStats[5] = 12
+						equip[0] = "cutelo serrado"
+						equip[1] = "pistola"
+						  	   }
+					
+					pare
+				}
+				caso 2:
+				{
+					escreva("Discípulo da Luz Lunar: \n")
+					escreva(" vit: 16\n vig: 15 \n for: 18\n dex: 15\n bld: 12\n arc: 16\n")
+					escrevaslow("Deseja escolher esta classe? Y/N: ", DIALOGO)
+					leia(yn)
+					yn = t.caixa_baixa(yn)
+
+					se(yn == "y"){
+						classeStats[0] = 16
+						classeStats[1] = 15
+						classeStats[2] = 18
+						classeStats[3] = 15
+						classeStats[4] = 12
+						classeStats[5] = 16
+						equip[0] = "lamina sagrada de ludwig"
+						equip[1] = "pistola"
+							   }
+					pare
+				}
+				caso 3:
+				{
+					escreva("Espião de Cainhurst: \n")
+					escreva(" vit: 15\n vig: 15 \n for: 14\n dex: 19\n bld: 15\n arc: 12\n")
+					escrevaslow("Deseja escolher esta classe? Y/N: ", DIALOGO)
+					leia(yn)
+					yn = t.caixa_baixa(yn)
+
+					se(yn == "y"){
+						classeStats[0] = 15
+						classeStats[1] = 15
+						classeStats[2] = 14
+						classeStats[3] = 19
+						classeStats[4] = 15
+						classeStats[5] = 12
+						equip[0] = "rakuyo"
+						equip[1] = "evelyn"	
+							   }
+					pare
+				}
+				caso 4:
+				{
+					escreva("Primeiro caçador: \n")
+						escreva(" vit: 19\n vig: 15 \n for: 17\n dex: 18\n bld: 12\n arc: 15\n")
+						escrevaslow("Deseja escolher esta classe? Y/N: ", DIALOGO)
+						leia(yn)
+						yn = t.caixa_baixa(yn)
+	
+						se(yn == "y"){
+							classeStats[0] = 15
+							classeStats[1] = 15
+							classeStats[2] = 14
+							classeStats[3] = 19
+							classeStats[4] = 15
+							classeStats[5] = 12
+							equip[0] = "lamina funeraria"
+							equip[1] = "blunderbuss"
+								   }
+				 	pare			
+				}
+
+			}
+			
+		 } enquanto(yn != "y")//Fim enquanto
 	}
-
 
 	funcao escrevaslow(cadeia texto, inteiro velocidade)
 	{
@@ -45,3 +147,4 @@ programa
 
 	
 }
+
