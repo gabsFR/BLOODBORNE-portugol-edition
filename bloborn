@@ -9,9 +9,23 @@ programa
      inteiro classe
      cadeia equip[2]
      cadeia yn
+     inteiro vidabase = 1000
 
-	const inteiro VELOCIDADE = 50
-	const inteiro DIALOGO = 70
+     inteiro vida_inimigo = 0
+
+	const inteiro VELOCIDADE = 0
+	const inteiro DIALOGO = 0
+
+	funcao escrevaslow(cadeia texto, inteiro velocidade)
+	{
+	 	para(inteiro i=0; i < t.numero_caracteres(texto); i++)
+	 	{
+	 		escreva(t.obter_caracter(texto, i))
+	 		u.aguarde(velocidade)
+
+		}
+
+	}
      
 	funcao inicio()
 	{
@@ -132,19 +146,102 @@ programa
 			}
 			
 		 } enquanto(yn != "y")//Fim enquanto
+
+		 escrevaslow("\nindependente de sua origem, voce foi atraido para yharnam por uma unica razao.",DIALOGO)
+		 escrevaslow("\nO sangue palido, uma substancia capaz de curar qualquer ferimento.,",DIALOGO)
+		 escrevaslow("\nApos uma rapida transfusao de sangue palido, voce acorda em uma clinica",DIALOGO)
+
+
+
+		batalha(10, 2000)
+		 
 	}
+			
 
-	funcao escrevaslow(cadeia texto, inteiro velocidade)
-	{
-	 	para(inteiro i=0; i < t.numero_caracteres(texto); i++)
-	 	{
-	 		escreva(t.obter_caracter(texto, i))
-	 		u.aguarde(velocidade)
 
+
+	funcao batalha(inteiro numero_turnos, inteiro vida_homiruim){
+		inteiro sorteio
+		vida_inimigo = vida_homiruim
+
+		sorteio = u.sorteia(1, 2)
+		 
+		 se(sorteio == 1)
+		 {
+		 	escreva("\nUma fera se aproxima")
+		 }senao{
+		 	escreva("")
+		 }
+		
+		
+		enquanto (numero_turnos > 0 e vida_inimigo > 0){
+			
+			cadeia frase = "\nTURNO: " + numero_turnos
+			
+			escrevaslow(frase, VELOCIDADE)
+			
+			kombat()
+			numero_turnos --
+
+			se(vida_inimigo <= 0){
+				escreva("\n*A fera parou de se mover, Bom trabalho!*")
+				pare
+			}
 		}
 
+		//verificar se venceu ou nao a batalha depois de n turnos
+	}
+	
+
+	funcao kombat(){
+		
+
+		inteiro arma
+		inteiro sorteio
+		inteiro kapow = 30
+		inteiro gun = 20
+
+		cadeia frasekapow = "\n*Voce deu " + (kapow * classeStats[2]) + " de dano, continue*"
+		cadeia frasegun = "\n*Voce atirou e deu " + (gun * classeStats[4]) + " de dano, continue*"
+		//se or arma branca: chance de 1 a 3 de causar dano critico
+		//se usar arma de fogo: chance de 50% de estunar e ganhar mais um turno
+		//caso apos estunar usar arma branca, dar dobro de dano 
+
+		escreva("\nEscolha sua arma: ")
+
+		para(inteiro i=0; i < 2; i++){
+			escreva("\n",i,"° ", equip[i])
+		}
+
+		leia(arma)
+		
+		se(arma == 0){
+			sorteio = u.sorteia(1, 3)
+
+
+			se(sorteio == 1){
+				vida_inimigo = vida_inimigo - (kapow * classeStats[2]) * 2
+				 escrevaslow("\n*Acerto critico, nao falta muito...*", DIALOGO)
+			}senao{
+				vida_inimigo = vida_inimigo - (kapow * classeStats[2])
+				escrevaslow(frasekapow,DIALOGO)
+			}
+
+			
+		
+		}senao se (arma == 1) {
+			sorteio = u.sorteia(1, 2)
+			se(sorteio == 2)
+			{
+				vida_inimigo = vida_inimigo - (gun * classeStats[4]) * 2
+				escrevaslow("*BOOM! headshot, agora e a sua chance, ataca...*",DIALOGO)
+ 			}senao{
+ 				vida_inimigo = vida_inimigo - (gun * classeStats[4])
+ 				escreva(frasegun,DIALOGO)
+ 			}
+		}
+		
 	}
 
 	
 }
-
