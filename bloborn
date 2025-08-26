@@ -1,5 +1,6 @@
 programa
 {
+	inclua biblioteca Sons
 	inclua biblioteca Texto --> t
 	inclua biblioteca Util --> u
 	
@@ -10,11 +11,12 @@ programa
      cadeia equip[2]
      cadeia yn
      inteiro vidabase = 1000
+     inteiro sorteio
 
      inteiro vida_inimigo = 0
 
-	const inteiro VELOCIDADE = 0
-	const inteiro DIALOGO = 0
+	const inteiro VELOCIDADE = 20
+	const inteiro DIALOGO = 40
 
 	funcao escrevaslow(cadeia texto, inteiro velocidade)
 	{
@@ -58,7 +60,7 @@ programa
 		  
 
 		 faca {
-			escreva("informe a classe: ")
+			escrevaslow("informe a classe: ",VELOCIDADE)
 			leia(classe)
 		 	
 			escolha(classe){
@@ -125,7 +127,7 @@ programa
 				caso 4:
 				{
 					escreva("Primeiro caçador: \n")
-						escreva(" vit: 19\n vig: 15 \n for: 17\n dex: 18\n bld: 12\n arc: 15\n")
+						escreva(" vit: 19\n vig: 15 \n for: 17\n dex: 18\n bld: 15\n arc: 12\n")
 						escrevaslow("Deseja escolher esta classe? Y/N: ", DIALOGO)
 						leia(yn)
 						yn = t.caixa_baixa(yn)
@@ -147,33 +149,23 @@ programa
 			
 		 } enquanto(yn != "y")//Fim enquanto
 
-		 escrevaslow("\nindependente de sua origem, voce foi atraido para yharnam por uma unica razao.",DIALOGO)
-		 escrevaslow("\nO sangue palido, uma substancia capaz de curar qualquer ferimento.,",DIALOGO)
-		 escrevaslow("\nApos uma rapida transfusao de sangue palido, voce acorda em uma clinica",DIALOGO)
-
-
-
-		batalha(10, 2000)
+		 escrevaslow("\nIndependente de sua origem, voce foi atraido para yharnam por uma unica razao.",DIALOGO)
+		 escrevaslow("\no sangue palido, uma substancia capaz de curar qualquer ferimento.,",DIALOGO)
+		 escrevaslow("\nApos uma rapida transfusao de sangue palido, voce acorda em uma clinica, sem memoria de nada\nmas voce não esta sozinho",DIALOGO)
+		 batalha(10, 2000)
 		 
+		 escrevaslow("\nContinuando sua jornada para descobrir oque diabos aconteceu aqui nessa cidade, \nvoce se depara com uma pequena lampada, por pura curiosidade voce decide encostar nela...",DIALOGO)
+		 escrevaslow("*FWOOOSH* De repente, a lampada te teleporta para um lugar uma estranho.\nA sua frente á uma escada dando entrada á uma pequena igreja, voce esta rodeado por lápides de diferentes tamanhos e materiais",DIALOGO)
+		 escrevaslow("\nO que voce quer fazer?: ",DIALOGO)
 	}
 			
 
 
 
 	funcao batalha(inteiro numero_turnos, inteiro vida_homiruim){
-		inteiro sorteio
 		vida_inimigo = vida_homiruim
 
-		sorteio = u.sorteia(1, 2)
-		 
-		 se(sorteio == 1)
-		 {
-		 	escreva("\nUma fera se aproxima")
-		 }senao{
-		 	escreva("")
-		 }
-		
-		
+		bixospeak()
 		enquanto (numero_turnos > 0 e vida_inimigo > 0){
 			
 			cadeia frase = "\nTURNO: " + numero_turnos
@@ -197,7 +189,6 @@ programa
 		
 
 		inteiro arma
-		inteiro sorteio
 		inteiro kapow = 30
 		inteiro gun = 20
 
@@ -242,6 +233,27 @@ programa
 		}
 		
 	}
+		
+		funcao bixospeak()
+		{
+		
+		sorteio = u.sorteia(1, 5)
+		 
+		 se(sorteio == 1)
+		 {
+		 	escrevaslow("\nUma fera se aproxima",DIALOGO)
+		 }senao se(sorteio == 2){
+		 	escrevaslow("\nUm atirador lhe avistou", DIALOGO)
+		 }senao se(sorteio == 3){
+		 	escrevaslow("\nUm executor te encontrou", DIALOGO)
+		 }senao se(sorteio == 4){
+		 	escrevaslow("\nIsso antes era humano, agora não é mais", DIALOGO)
+		 }senao se(sorteio == 5){
+		 	escrevaslow("\nCONTEM DOENÇA, MORTE!", DIALOGO)
+		 }
+
+		}
+		 			
 
 	
 }
