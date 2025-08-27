@@ -10,7 +10,7 @@ programa
      inteiro classe
      cadeia equip[2]
      cadeia yn
-     inteiro vidabase = 1000
+     inteiro vidabase = 250
      inteiro sorteio
 
      inteiro vida_inimigo = 0
@@ -164,6 +164,7 @@ programa
 
 	funcao batalha(inteiro numero_turnos, inteiro vida_homiruim){
 		vida_inimigo = vida_homiruim
+		vidabase = vidabase * classeStats[0]
 
 		bixospeak()
 		enquanto (numero_turnos > 0 e vida_inimigo > 0){
@@ -176,7 +177,11 @@ programa
 			numero_turnos --
 
 			se(vida_inimigo <= 0){
-				escreva("\n*A fera parou de se mover, Bom trabalho!*")
+				escrevaslow("\n*A fera parou de se mover, Bom trabalho!*", DIALOGO)
+				pare
+			}
+			se(numero_turnos <= 0){
+				escrevaslow("\nA fera escapou, mas nao por muito tempo", DIALOGO)
 				pare
 			}
 		}
@@ -198,10 +203,10 @@ programa
 		//se usar arma de fogo: chance de 50% de estunar e ganhar mais um turno
 		//caso apos estunar usar arma branca, dar dobro de dano 
 
-		escreva("\nEscolha sua arma: ")
+		escrevaslow("\nEscolha sua arma: ", VELOCIDADE)
 
 		para(inteiro i=0; i < 2; i++){
-			escreva("\n",i,"° ", equip[i])
+			escreva("\n",i,"° ", equip[i], " ")
 		}
 
 		leia(arma)
@@ -225,10 +230,10 @@ programa
 			se(sorteio == 2)
 			{
 				vida_inimigo = vida_inimigo - (gun * classeStats[4]) * 2
-				escrevaslow("*BOOM! headshot, agora e a sua chance, ataca...*",DIALOGO)
+				escrevaslow("*BOOM! headshot, agora e a sua chance, ataca...*", DIALOGO)
  			}senao{
  				vida_inimigo = vida_inimigo - (gun * classeStats[4])
- 				escreva(frasegun,DIALOGO)
+ 				escrevaslow(frasegun,DIALOGO)
  			}
 		}
 		
@@ -247,7 +252,7 @@ programa
 		 }senao se(sorteio == 3){
 		 	escrevaslow("\nUm executor te encontrou", DIALOGO)
 		 }senao se(sorteio == 4){
-		 	escrevaslow("\nIsso antes era humano, agora não é mais", DIALOGO)
+		 	escrevaslow("\nAquela coisa antes era humana, agora não é mais", DIALOGO)
 		 }senao se(sorteio == 5){
 		 	escrevaslow("\nCONTEM DOENÇA, MORTE!", DIALOGO)
 		 }
