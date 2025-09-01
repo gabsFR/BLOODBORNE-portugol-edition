@@ -28,7 +28,14 @@ programa
 		}
 
 	}
-     
+
+	funcao A()
+	{
+		cadeia tecla
+		escrevaslow(" [A] ", DIALOGO)
+		leia(tecla)	
+	}
+
 	funcao inicio()
 	{
 		escreva("oooooooooo.  ooooo          .oooooo.     .oooooo.   oooooooooo.   oooooooooo.    .oooooo.   ooooooooo.   ooooo      ooo oooooooooooo \n")
@@ -51,7 +58,7 @@ programa
             escrevaslow("...que nome intrigante.", DIALOGO)
             escrevaslow("\nQual sua classe?: ", VELOCIDADE)
             
-            escrevaslow("\n1) Carcereiro de Hemwick\n", VELOCIDADE)
+            escrevaslow("\n1) Caçador da Igreja de cura\n", VELOCIDADE)
 		  escrevaslow("2) Discípulo da Luz Lunar\n", VELOCIDADE)
 		  escrevaslow("3) Espião de Cainhurst\n", VELOCIDADE)
 		  escrevaslow("4) Primeiro caçador\n", VELOCIDADE)
@@ -66,9 +73,10 @@ programa
 			escolha(classe){
 				caso 1:
 				{
-					escreva("Carcereiro de Hemwick: \n")
+					escreva("Caçador da igreja de cura: \n")
 					escreva(" vit: 17\n vig: 17 \n for: 19\n dex: 14\n bld: 12\n arc: 12\n")
-					escrevaslow("Deseja escolher esta classe? Y/N: ", DIALOGO)
+					escreva("Arma branca: Cutelo serrado","\nArma de fogo: Pistola do caçador")
+					escrevaslow("\nDeseja escolher esta classe? Y/N: ", DIALOGO)
 					leia(yn)
 						yn = t.caixa_baixa(yn)
 					se(yn == "y"){
@@ -88,7 +96,8 @@ programa
 				{
 					escreva("Discípulo da Luz Lunar: \n")
 					escreva(" vit: 16\n vig: 15 \n for: 18\n dex: 15\n bld: 12\n arc: 16\n")
-					escrevaslow("Deseja escolher esta classe? Y/N: ", DIALOGO)
+					escreva("Arma branca: Lamina sagrada de Ludwig","\nArma de fogo: Rifle")
+					escrevaslow("\nDeseja escolher esta classe? Y/N: ", DIALOGO)
 					leia(yn)
 					yn = t.caixa_baixa(yn)
 
@@ -97,10 +106,10 @@ programa
 						classeStats[1] = 15
 						classeStats[2] = 18
 						classeStats[3] = 15
-						classeStats[4] = 12
+						classeStats[4] = 13
 						classeStats[5] = 16
 						equip[0] = "lamina sagrada de ludwig"
-						equip[1] = "pistola"
+						equip[1] = "Rifle"
 							   }
 					pare
 				}
@@ -108,7 +117,8 @@ programa
 				{
 					escreva("Espião de Cainhurst: \n")
 					escreva(" vit: 15\n vig: 15 \n for: 14\n dex: 19\n bld: 15\n arc: 12\n")
-					escrevaslow("Deseja escolher esta classe? Y/N: ", DIALOGO)
+					escreva("Arma branca: Rakuyo","\nArma de fogo: Evelyn")
+					escrevaslow("\nDeseja escolher esta classe? Y/N: ", DIALOGO)
 					leia(yn)
 					yn = t.caixa_baixa(yn)
 
@@ -128,7 +138,8 @@ programa
 				{
 					escreva("Primeiro caçador: \n")
 						escreva(" vit: 19\n vig: 15 \n for: 17\n dex: 18\n bld: 15\n arc: 12\n")
-						escrevaslow("Deseja escolher esta classe? Y/N: ", DIALOGO)
+						escreva("Arma branca: Lamina funeraria","\nArma de fogo: Blunderbuss")
+						escrevaslow("\nDeseja escolher esta classe? Y/N: ", DIALOGO)
 						leia(yn)
 						yn = t.caixa_baixa(yn)
 	
@@ -148,42 +159,71 @@ programa
 			}
 			
 		 } enquanto(yn != "y")//Fim enquanto
-
+		limpa()
+		
 		 escrevaslow("\nIndependente de sua origem, voce foi atraido para yharnam por uma unica razao.",DIALOGO)
 		 escrevaslow("\no sangue palido, uma substancia capaz de curar qualquer ferimento.,",DIALOGO)
 		 escrevaslow("\nApos uma rapida transfusao de sangue palido, voce acorda em uma clinica, sem memoria de nada\nmas voce não esta sozinho",DIALOGO)
 		 batalha(10, 2000)
-		 
+		 limpa()
 		 escrevaslow("\nContinuando sua jornada para descobrir oque diabos aconteceu aqui nessa cidade, \nvoce se depara com uma pequena lampada, por pura curiosidade voce decide encostar nela...",DIALOGO)
 		 escrevaslow("*FWOOOSH* De repente, a lampada te teleporta para um lugar uma estranho.\nA sua frente á uma escada dando entrada á uma pequena igreja, voce esta rodeado por lápides de diferentes tamanhos e materiais",DIALOGO)
-		 escrevaslow("\nO que voce quer fazer?: ",DIALOGO)
+		 
 	}
 			
 
 
 
 	funcao batalha(inteiro numero_turnos, inteiro vida_homiruim){
+		
+		inteiro dano
+		
 		vida_inimigo = vida_homiruim
 		vidabase = vidabase * classeStats[0]
-
+		dano = (vidabase - vida_inimigo) / 3
+		
 		bixospeak()
+		
 		enquanto (numero_turnos > 0 e vida_inimigo > 0){
 			
-			cadeia frase = "\nTURNO: " + numero_turnos
+			cadeia frase = "\n|==TURNO: " + numero_turnos
+			 
 			
 			escrevaslow(frase, VELOCIDADE)
+			escrevaslow("|VIDA: " + vidabase, VELOCIDADE)
+			escrevaslow("|INIMIGO: " + vida_inimigo, VELOCIDADE)
 			
 			kombat()
 			numero_turnos --
 
+			vidabase = vidabase - dano 
+			
+			escrevaslow("\nVoce tomou " + dano + " de dano.", DIALOGO)
+			escrevaslow("\nsua vida agora eh: " + vidabase, DIALOGO)
+
+			
 			se(vida_inimigo <= 0){
 				escrevaslow("\n*A fera parou de se mover, Bom trabalho!*", DIALOGO)
+				vidabase = 250
+				A()
 				pare
 			}
 			se(numero_turnos <= 0){
 				escrevaslow("\nA fera escapou, mas nao por muito tempo", DIALOGO)
+				A()
 				pare
 			}
+			se(vidabase <= 0){
+				escreva("╦  ╦╔═╗╔═╗╔═╗  ╔╦╗╔═╗╦═╗╦═╗╔═╗╦ ╦")
+				escreva("╚╗╔╝║ ║║  ║╣   ║║║║ ║╠╦╝╠╦╝║╣ ║ ║")
+				escreva(" ╚╝ ╚═╝╚═╝╚═╝  ╩ ╩╚═╝╩╚═╩╚═╚═╝╚═╝")
+				escrevaslow("aperte a para retornar", VELOCIDADE)
+				A()
+				
+				
+			}
+
+			
 		}
 
 		//verificar se venceu ou nao a batalha depois de n turnos
@@ -203,7 +243,7 @@ programa
 		//se usar arma de fogo: chance de 50% de estunar e ganhar mais um turno
 		//caso apos estunar usar arma branca, dar dobro de dano 
 
-		escrevaslow("\nEscolha sua arma: ", VELOCIDADE)
+		escrevaslow("\nEscolha sua açao: ", VELOCIDADE)
 
 		para(inteiro i=0; i < 2; i++){
 			escreva("\n",i,"° ", equip[i], " ")
@@ -258,7 +298,24 @@ programa
 		 }
 
 		}
-		 			
+		
+		funcao huntersdream1()
+		{
+		 inteiro path
+		 escrevaslow("\nO que voce quer fazer?: ",DIALOGO)
+		   
+            escrevaslow("\n1) Ler as lapides\n", VELOCIDADE)
+		  escrevaslow("2) Inspecionar o lugar\n", VELOCIDADE)
+		  escrevaslow("3) Entrar na igreja\n", VELOCIDADE)
+		  escrevaslow("4) Encostar na lampada denovo\n", VELOCIDADE)
+		 leia(path)
+		 se(path == 1)
+		 {
+		 	escrevaslow("\nAs lapides nao parecem ter nenhuma escrita, algumas sao feitas de pedra, outra e feita de um tipo estranho de tecido e a outra esta quebrada", DIALOGO)
+		 }se(path == 2){
+		 	
+		 }
+		}
 
 	
 }
