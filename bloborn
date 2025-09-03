@@ -12,11 +12,12 @@ programa
      cadeia yn
      inteiro vidabase = 250
      inteiro sorteio
-
+	inteiro mrkrabs = 0
      inteiro vida_inimigo = 0
+     inteiro janus
 
-	const inteiro VELOCIDADE = 20
-	const inteiro DIALOGO = 40
+	const inteiro VELOCIDADE = 0
+	const inteiro DIALOGO = 0
 
 	funcao escrevaslow(cadeia texto, inteiro velocidade)
 	{
@@ -165,10 +166,15 @@ programa
 		 escrevaslow("\no sangue palido, uma substancia capaz de curar qualquer ferimento.,",DIALOGO)
 		 escrevaslow("\nApos uma rapida transfusao de sangue palido, voce acorda em uma clinica, sem memoria de nada\nmas voce não esta sozinho",DIALOGO)
 		 batalha(10, 2000)
+		 
 		 limpa()
 		 escrevaslow("\nContinuando sua jornada para descobrir oque diabos aconteceu aqui nessa cidade, \nvoce se depara com uma pequena lampada, por pura curiosidade voce decide encostar nela...",DIALOGO)
 		 escrevaslow("*FWOOOSH* De repente, a lampada te teleporta para um lugar uma estranho.\nA sua frente á uma escada dando entrada á uma pequena igreja, voce esta rodeado por lápides de diferentes tamanhos e materiais",DIALOGO)
 		 
+		 huntersdream1()
+		 limpa()
+		 escrevaslow("Voce se encontra em frente a 2 portoes, o que vai fazer?", DIALOGO)
+		 leia(janus)
 	}
 			
 
@@ -204,12 +210,15 @@ programa
 			
 			se(vida_inimigo <= 0){
 				escrevaslow("\n*A fera parou de se mover, Bom trabalho!*", DIALOGO)
+				mrkrabs = mrkrabs + 500
+				escrevaslow("\n*Voce recebeu " + mrkrabs + " ecos de sangue*",DIALOGO)
+				
 				vidabase = 250
 				A()
 				pare
 			}
 			se(numero_turnos <= 0){
-				escrevaslow("\nA fera escapou, mas nao por muito tempo", DIALOGO)
+				escrevaslow("\n*A fera escapou, mas nao por muito tempo*", DIALOGO)
 				A()
 				pare
 			}
@@ -252,7 +261,7 @@ programa
 		leia(arma)
 		
 		se(arma == 0){
-			sorteio = u.sorteia(1, 3)
+			sorteio = u.sorteia(1, 2)
 
 
 			se(sorteio == 1){
@@ -302,20 +311,47 @@ programa
 		funcao huntersdream1()
 		{
 		 inteiro path
-		 escrevaslow("\nO que voce quer fazer?: ",DIALOGO)
-		   
+		 logico repetiu = falso
+		 escrevaslow("\nO que voce quer fazer? ",DIALOGO)
+		 
             escrevaslow("\n1) Ler as lapides\n", VELOCIDADE)
 		  escrevaslow("2) Inspecionar o lugar\n", VELOCIDADE)
 		  escrevaslow("3) Entrar na igreja\n", VELOCIDADE)
 		  escrevaslow("4) Encostar na lampada denovo\n", VELOCIDADE)
-		 leia(path)
-		 se(path == 1)
-		 {
-		 	escrevaslow("\nAs lapides nao parecem ter nenhuma escrita, algumas sao feitas de pedra, outra e feita de um tipo estranho de tecido e a outra esta quebrada", DIALOGO)
-		 }se(path == 2){
+		  
+		 
+		  faca{
+
+		  	se(repetiu == verdadeiro){
+		  		escrevaslow("\nO que voce quer fazer?: ",DIALOGO)
+		  	}
+		  	
+		 	leia(path)
 		 	
-		 }
-		}
+		 	se(path == 1)
+		 	{
+		 		escrevaslow("As lapides nao parecem ter nenhuma escrita, algumas sao feitas de pedra, outra e feita de um tipo estranho de tecido e a outra esta quebrada", DIALOGO)
+		 	}
+		 	
+		 	senao se(path == 2){
+		 		escrevaslow("Ao olhar a seu redor, voce encontra uma pessoa, ela parece estar dormindo, talvez voce devesse voltar mais tarde",DIALOGO)
+		 	}
+
+			senao se(path == 3){
+				escrevaslow("Voce decide subir as escadas, ao subir, voce encontra as portas de uma pequena igreja. Dentro, voce ve um senhorzinho em uma cadeira de rodas, ele sorri ao ver voce", DIALOGO)
+				escrevaslow("\nAh-hah, você deve ser o novo caçador. Bem-vindo ao Sonho do Caçador.\nEste será seu lar, por enquanto. Eu sou... Gehrman, amigo de vocês, caçadores.\nVocês certamente devem estar meio atordoados agora, mas não pensem muito nisso.\nApenas saiam e matem algumas feras. É para o seu próprio bem. Sabem, é só o que os caçadores fazem! Vocês vão se acostumar...", DIALOGO)
+				escrevaslow("Voce desce as escadas de novo", DIALOGO)
+			}
+		 	senao se(path == 4){
+		 		escreva("Cansado de explorar o lugar, voce se encosta na lampada para descansar, ela te leva para fora do sonho dos caçadores\n")
+		 		A()
+		 		pare
+		 	}
+
+		 	repetiu = verdadeiro
+		 	
+		   } enquanto(path != 4)
+	      }
 
 	
 }
