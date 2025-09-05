@@ -63,6 +63,7 @@ programa
 		  escrevaslow("2) Discípulo da Luz Lunar\n", VELOCIDADE)
 		  escrevaslow("3) Espião de Cainhurst\n", VELOCIDADE)
 		  escrevaslow("4) Primeiro caçador\n", VELOCIDADE)
+		  escrevaslow("5) ???????????\n", VELOCIDADE)
 		  
 
 		  
@@ -145,9 +146,9 @@ programa
 						yn = t.caixa_baixa(yn)
 	
 						se(yn == "y"){
-							classeStats[0] = 15
+							classeStats[0] = 19
 							classeStats[1] = 15
-							classeStats[2] = 14
+							classeStats[2] = 17
 							classeStats[3] = 19
 							classeStats[4] = 15
 							classeStats[5] = 12
@@ -156,7 +157,27 @@ programa
 								   }
 				 	pare			
 				}
-
+				caso 2020:
+				{
+					escreva("Dragao de Dojima: \n")
+						escreva(" vit: 20\n vig: 25 \n for: 30\n spd: 25\n bld: 20\n stl: 25\n")
+						escreva("STYLE: YAKUZA/DRAGAO DE DOJIMA","\nBicicleta")
+						escrevaslow("\nDeseja escolher esta classe? Y/N: ", DIALOGO)
+						leia(yn)
+						yn = t.caixa_baixa(yn)
+	
+						se(yn == "y"){
+							classeStats[0] = 20
+							classeStats[1] = 25
+							classeStats[2] = 30
+							classeStats[3] = 25
+							classeStats[4] = 20
+							classeStats[5] = 25
+							equip[0] = "STYLE: YAKUZA"
+							equip[1] = "Bicicleta"
+								   }
+				 	pare			
+				}
 			}
 			
 		 } enquanto(yn != "y")//Fim enquanto
@@ -174,7 +195,22 @@ programa
 		 huntersdream1()
 		 limpa()
 		 escrevaslow("Voce se encontra em frente a 2 portoes, o que vai fazer?", DIALOGO)
+		 escrevaslow("1° ir a direita", DIALOGO)
+		 escrevaslow("2° ir a esquerda", DIALOGO)
 		 leia(janus)
+
+		 se(janus == 1)
+		 {
+		 	escrevaslow("Ao passar pelo portao voce encontra uma pessoa dormindo,\nmas voce acidentalmente pisa em um graveto", DIALOGO)
+		 	batalha(10, 2200)
+		 }
+		 se(janus == 2)
+		 {
+		 	se(classe == 2020)
+		 	{
+		 	 escrevaslow("dps eu termino essa parte kkkkj",DIALOGO)	
+		 	}
+		 }
 	}
 			
 
@@ -194,6 +230,45 @@ programa
 			
 			cadeia frase = "\n|==TURNO: " + numero_turnos
 			 
+			se(classe == 2020){
+			
+			escrevaslow(frase, VELOCIDADE)
+			escrevaslow("|VIDA: " + vidabase, VELOCIDADE)
+			escrevaslow("|VITIMA: " + vida_inimigo, VELOCIDADE)
+			
+			kombat()
+			numero_turnos --
+
+			vidabase = vidabase - dano 
+			
+			escrevaslow("\nVoce tomou " + dano + " de dano.", DIALOGO)
+			escrevaslow("\nsua vida agora eh: " + vidabase, DIALOGO)
+
+			
+			se(vida_inimigo <= 0){
+				escrevaslow("\n*A fera parou de se mover, Bom trabalho!*", DIALOGO)
+				mrkrabs = mrkrabs + 500
+				escrevaslow("\n*Voce recebeu " + mrkrabs + " ecos de sangue*",DIALOGO)
+				
+				vidabase = 250
+				A()
+				pare
+			}
+			se(numero_turnos <= 0){
+				escrevaslow("\n*A fera escapou, mas nao por muito tempo*", DIALOGO)
+				A()
+				pare
+			}
+			se(vidabase <= 0){
+				escreva("╦  ╦╔═╗╔═╗╔═╗  ╔╦╗╔═╗╦═╗╦═╗╔═╗╦ ╦")
+				escreva("╚╗╔╝║ ║║  ║╣   ║║║║ ║╠╦╝╠╦╝║╣ ║ ║")
+				escreva(" ╚╝ ╚═╝╚═╝╚═╝  ╩ ╩╚═╝╩╚═╩╚═╚═╝╚═╝")
+				escrevaslow("aperte a para retornar", VELOCIDADE)
+				A()
+				
+				
+			}
+			}senao{
 			
 			escrevaslow(frase, VELOCIDADE)
 			escrevaslow("|VIDA: " + vidabase, VELOCIDADE)
@@ -232,7 +307,7 @@ programa
 				
 			}
 
-			
+			}
 		}
 
 		//verificar se venceu ou nao a batalha depois de n turnos
@@ -251,9 +326,53 @@ programa
 		//se or arma branca: chance de 1 a 3 de causar dano critico
 		//se usar arma de fogo: chance de 50% de estunar e ganhar mais um turno
 		//caso apos estunar usar arma branca, dar dobro de dano 
-
+		
 		escrevaslow("\nEscolha sua açao: ", VELOCIDADE)
 
+		se(classe == 2020){
+			para(inteiro i=0; i < 2; i++){
+			escreva("\n",i,"° ", equip[i], " ")
+		}
+
+		leia(arma)
+		
+		se(arma == 0){
+			sorteio = u.sorteia(1, 5)
+
+
+			se(sorteio == 1){
+				vida_inimigo = vida_inimigo - (kapow * classeStats[2]) * 5
+				 escrevaslow("\n*COMBO START: Voce da um soco na boca do cara*", DIALOGO)
+				 escrevaslow("\n*voce deu: " + (vida_inimigo - (kapow * classeStats[2]) * 5) + " de dano" , DIALOGO)
+				 vida_inimigo = vida_inimigo - (kapow * classeStats[2])
+				 escrevaslow("\n*COMBO: Voce mete uma bicuda no inimigo*", DIALOGO)
+				 escrevaslow("\n*voce deu: " + (vida_inimigo - (kapow * classeStats[2])) + " de dano" , DIALOGO)
+				 vida_inimigo = vida_inimigo - (kapow * classeStats[2])
+				 escrevaslow("\n*COMBO: Voce da uma voadora no inimigo*", DIALOGO)
+				 escrevaslow("\n*voce deu: " + (vida_inimigo - (kapow * classeStats[2])) + " de dano" , DIALOGO)
+				 escrevaslow("\n*COMBO FINISH*", DIALOGO)
+			}senao{
+				vida_inimigo = vida_inimigo - (kapow * classeStats[2]) *2
+				escrevaslow("\nVoce da um chute na cabeça do cara, oof",DIALOGO)
+				escrevaslow("\n*voce deu: " + (vida_inimigo - (kapow * classeStats[2]) * 2) + " de dano" , DIALOGO)
+			}
+
+			
+		
+		}senao se (arma == 1) {
+			sorteio = u.sorteia(1, 2)
+			se(sorteio == 2)
+			{
+				vida_inimigo = vida_inimigo - (gun * classeStats[4]) * 4
+				escrevaslow("\n*Voce joga sua bicicleta no cara, e magicamente encontra outra ao seu lado*", DIALOGO)
+				escrevaslow("\n*voce deu: " + (vida_inimigo - (gun * classeStats[4]) * 4) + " de dano" , DIALOGO)
+ 			}senao{
+ 				vida_inimigo = vida_inimigo - (gun * classeStats[4]) * 2
+ 				escrevaslow("\n*Voce deu uma bicicletada no cara, oof*",DIALOGO)
+ 				escrevaslow("\n*voce deu: " + (vida_inimigo - (gun * classeStats[4]) * 2) + " de dano" , DIALOGO)
+ 			}
+		}
+		}senao{
 		para(inteiro i=0; i < 2; i++){
 			escreva("\n",i,"° ", equip[i], " ")
 		}
@@ -267,6 +386,7 @@ programa
 			se(sorteio == 1){
 				vida_inimigo = vida_inimigo - (kapow * classeStats[2]) * 2
 				 escrevaslow("\n*Acerto critico, nao falta muito...*", DIALOGO)
+				 escrevaslow("\n*voce deu: " + (vida_inimigo - (kapow * classeStats[2]) * 2) + " de dano" , DIALOGO)
 			}senao{
 				vida_inimigo = vida_inimigo - (kapow * classeStats[2])
 				escrevaslow(frasekapow,DIALOGO)
@@ -279,13 +399,14 @@ programa
 			se(sorteio == 2)
 			{
 				vida_inimigo = vida_inimigo - (gun * classeStats[4]) * 2
-				escrevaslow("*BOOM! headshot, agora e a sua chance, ataca...*", DIALOGO)
+				escrevaslow("\n*BOOM! headshot, agora e a sua chance, ataca...*", DIALOGO)
+				escrevaslow("\n*voce deu: " + (vida_inimigo - (gun * classeStats[4]) * 2) + " de dano" , DIALOGO)
  			}senao{
  				vida_inimigo = vida_inimigo - (gun * classeStats[4])
  				escrevaslow(frasegun,DIALOGO)
  			}
 		}
-		
+		}
 	}
 		
 		funcao bixospeak()
