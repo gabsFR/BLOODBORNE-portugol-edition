@@ -195,22 +195,71 @@ programa
 		 huntersdream1()
 		 limpa()
 		 escrevaslow("Voce se encontra em frente a 2 portoes, o que vai fazer?", DIALOGO)
-		 escrevaslow("1° ir a direita", DIALOGO)
-		 escrevaslow("2° ir a esquerda", DIALOGO)
+		 escrevaslow("\n1° ir a direita ", DIALOGO)
+		 escrevaslow("\n2° ir a esquerda ", DIALOGO)
 		 leia(janus)
 
 		 se(janus == 1)
 		 {
-		 	escrevaslow("Ao passar pelo portao voce encontra uma pessoa dormindo,\nmas voce acidentalmente pisa em um graveto", DIALOGO)
+		 	limpa()
+		 	escrevaslow("\nAo passar pelo portao voce encontra uma pessoa dormindo,\nmas voce acidentalmente pisa em um graveto", DIALOGO)
 		 	batalha(10, 2200)
+		 	limpa()
+		 	escrevaslow("\nApos o confronto com aquele morador, voce se encontra de frente com um grupo de pessoas.\n percebendo que voce definitivamente nao tem chance\nvoce decide se esgueirar ate a saida mais proxima", DIALOGO)
 		 }
 		 se(janus == 2)
 		 {
-		 	se(classe == 2020)
-		 	{
-		 	 escrevaslow("dps eu termino essa parte kkkkj",DIALOGO)	
-		 	}
+		 	limpa()
+		 	escrevaslow("\nO portao esta trancado, voce decide ir pelo outro portao", DIALOGO)
+		 	escrevaslow("\nAo passar pelo portao voce encontra uma pessoa dormindo, voce consegue passar despercebido", DIALOGO)
+		 	escrevaslow("\nVoce se encontra de frente com um grupo de pessoas, mas ao tentar passar despercebido, um deles te nota\n", DIALOGO)
+		 	batalha(7, 1100)
+		 	batalha(5, 1500)
+		 	batalha(6, 1200)
+		 	limpa()
+			escrevaslow("*que puta sorte em*", DIALOGO)
 		 }
+			
+		 	escrevaslow("\nContinuando pelas ruas de yharnam, voce se ve em frente a um gigantesco sistema de esgotos, voce entra", DIALOGO)
+		 	escrevaslow("\nO que voce quer fazer?", DIALOGO)
+			escrevaslow("\n1° Continuar adentro ", DIALOGO)
+		 	escrevaslow("\n2° Tentar assaltar aquele morador estranhamente alto e peludo com uma serra ", DIALOGO)
+		 	escrevaslow("\n3° Comer musgo da parede ", DIALOGO)
+		 	leia(janus)
+
+		 	se(janus == 3)
+		 	{
+		 		escrevaslow("\nVoce come musgo da parede, nada aparenta ter acontecido mais voce se sente melhor", DIALOGO)
+		 		escrevaslow("\nO musgo tava uma delicia, mais vida que segue, voce continua.\nApos alguns minutos andando e evitando criaturas, voce se ve enfrente a um tunel.", DIALOGO)
+		 		escrevaslow("\nNo fundo do tunel, voce se depara com um porco gigante, ele começa a correr em sua direçao.", DIALOGO)
+		 		escrevaslow("\n*aperte a repetidamente para correr" + "\n", DIALOGO)
+		 		A()A()A()A()A()A()
+		 	}
+		 	se(janus == 2)
+		 	{
+		 		escrevaslow("\nVoce decide tentar assaltar aquele senhor alto, extremamente peludo e com uma serra dupla nas maos\n nao da muito certo", DIALOGO)
+		 		batalha(10, 2550)
+		 		escrevaslow("Parabens, voce assaltou aquele cara e encontrou 750 ecos de sangue!", DIALOGO)
+		 		mrkrabs = mrkrabs + 750
+				limpa()
+		 		escrevaslow("\nVoce se sente otimo apos roubar aquele cara aleatorio, mais vida que segue, voce continua.\nApos alguns minutos andando e evitando criaturas, voce se ve enfrente a um tunel.", DIALOGO)
+		 		escrevaslow("\nNo fundo do tunel, voce se depara com um porco gigante, ele começa a correr em sua direçao.", DIALOGO)
+		 		escrevaslow("\n*aperte a repetidamente para correr" + "\n", DIALOGO)
+		 		A()A()A()A()A()A()
+		 	}
+		 	se(janus == 1)
+		 	{
+		 		escrevaslow("\nMesmo com a tentacao daquele delicioso musgo na parede, voce continua.\nApos alguns minutos andando e evitando criaturas, voce se ve enfrente a um tunel.", DIALOGO)
+		 		escrevaslow("\nNo fundo do tunel, voce se depara com um porco gigante, ele começa a correr em sua direçao.", DIALOGO)
+		 		escrevaslow("\n*aperte a repetidamente para correr" + "\n", DIALOGO)
+		 		A()A()A()A()A()A()
+		 		limpa()
+		 	}
+
+		 	escrevaslow("surpreendentemente, voce consegue fugir daquele porco gigante.\nInfelizmente, nao tem como voltar por onde voce veio,\nA cabeça do porco ta entalada na porta, o unico caminho e subindo essa escada", DIALOGO)
+		 	escrevaslow("\nContinuando sua subida, voce sobe um par de escadas e se ve dentro de um cemiterio.\nEm sua frente a um homem, ele tem ta usando um tipo de casaco, um chapeu e ele tem faixas pelos olhos\n", DIALOGO)
+		 	escrevaslow("\nEle esta decepando um corpo, com oque parece ser um machado, ele te avista", DIALOGO)
+		 	escrevaslow("\"..Feras por toda a cidade...\n...Você será uma delas, mais cedo ou mais tarde...\"",DIALOGO)
 	}
 			
 
@@ -314,7 +363,7 @@ programa
 	}
 	
 
-	funcao kombat(){
+	funcao kombat(){ //funcao combate
 		
 
 		inteiro arma
@@ -337,7 +386,7 @@ programa
 		leia(arma)
 		
 		se(arma == 0){
-			sorteio = u.sorteia(1, 5)
+			sorteio = u.sorteia(1, 3)
 
 
 			se(sorteio == 1){
@@ -409,7 +458,7 @@ programa
 		}
 	}
 		
-		funcao bixospeak()
+		funcao bixospeak()//falas que aparecem antes de cada luta(
 		{
 		
 		sorteio = u.sorteia(1, 5)
@@ -429,7 +478,7 @@ programa
 
 		}
 		
-		funcao huntersdream1()
+		funcao huntersdream1()//hub q aparece apos cada boss
 		{
 		 inteiro path
 		 logico repetiu = falso
