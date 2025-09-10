@@ -258,7 +258,7 @@ programa
 
 		 	escrevaslow("surpreendentemente, voce consegue fugir daquele porco gigante.\nInfelizmente, nao tem como voltar por onde voce veio,\nA cabeça do porco ta entalada na porta, o unico caminho e subindo essa escada", DIALOGO)
 		 	escrevaslow("\nContinuando sua subida, voce sobe um par de escadas e se ve dentro de um cemiterio.\nEm sua frente a um homem, ele tem ta usando um tipo de casaco, um chapeu e ele tem faixas pelos olhos\n", DIALOGO)
-		 	escrevaslow("\nEle esta decepando um corpo, com oque parece ser um machado, ele te avista", DIALOGO)
+		 	escrevaslow("\nEle esta decepando um corpo, com oque parece ser um machado, ele te avista\n", DIALOGO)
 		 	escrevaslow("\"..Feras por toda a cidade...\n...Você será uma delas, mais cedo ou mais tarde...\"",DIALOGO)
 	}
 			
@@ -478,6 +478,7 @@ programa
 
 		}
 		
+		
 		funcao huntersdream1()//hub q aparece apos cada boss
 		{
 		 inteiro path
@@ -523,5 +524,12 @@ programa
 		   } enquanto(path != 4)
 	      }
 
-	
+		funcao gascoigne(inteiro vida_homiruim){
+			
+		inteiro dano
+		vida_inimigo = vida_homiruim
+		vidabase = vidabase * classeStats[0]
+		dano = (vidabase - vida_inimigo) / 2
+		}
+
 }
