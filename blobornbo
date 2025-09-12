@@ -259,7 +259,9 @@ programa
 		 	escrevaslow("surpreendentemente, voce consegue fugir daquele porco gigante.\nInfelizmente, nao tem como voltar por onde voce veio,\nA cabeça do porco ta entalada na porta, o unico caminho e subindo essa escada", DIALOGO)
 		 	escrevaslow("\nContinuando sua subida, voce sobe um par de escadas e se ve dentro de um cemiterio.\nEm sua frente a um homem, ele tem ta usando um tipo de casaco, um chapeu e ele tem faixas pelos olhos\n", DIALOGO)
 		 	escrevaslow("\nEle esta decepando um corpo, com oque parece ser um machado, ele te avista\n", DIALOGO)
-		 	escrevaslow("\"..Feras por toda a cidade...\n...Você será uma delas, mais cedo ou mais tarde...\"",DIALOGO)
+		 	escrevaslow("\"..Feras por toda a cidade...\n...Você será uma delas, mais cedo ou mais tarde...\"\n",DIALOGO)
+
+		 	gascoigne(4000)
 	}
 			
 
@@ -320,7 +322,7 @@ programa
 			}senao{
 			
 			escrevaslow(frase, VELOCIDADE)
-			escrevaslow("|VIDA: " + vidabase, VELOCIDADE)
+			escrevaslow("|" + nome + ": " + vidabase, VELOCIDADE)
 			escrevaslow("|INIMIGO: " + vida_inimigo, VELOCIDADE)
 			
 			kombat()
@@ -529,7 +531,88 @@ programa
 		inteiro dano
 		vida_inimigo = vida_homiruim
 		vidabase = vidabase * classeStats[0]
-		dano = (vidabase - vida_inimigo) / 2
+		dano = (vidabase - vida_inimigo) / 3
+
+		
+		escreva("                                           ═«═╣███▓▀▀Ü\n")
+		escreva("                                             -▓█▓╫╬▄▓N\n")
+		escreva("                                              ,▓▓▓█▓▓▓▓φ,\n")
+		escreva("                                             ╔████▓███████▄\n")
+		escreva("                                            .████████████▓█▓\n")
+		escreva("                                            ▓████████▓█████▓▓≥\n")
+		escreva("                                           ╔▓▓████████▌█████▓▓▄\n")
+		escreva("                                           ▓█▓████████▓█████▓▓█▄\n")
+		escreva("                                          ╓█▓████████▓███████▓▓▌\n")
+		escreva("                                         .██╩████████▓▓████╫█▓▓M\n")
+		escreva("                                         ╝▀▀╔████████▓▓███▀▓█▓█⌐\n")
+		escreva("                                            ▓███████▓▓▓█▓█ ▓███\n")
+		escreva("                                           ║████████▓▓▓███,▓▓▓▌\n")
+		escreva("                                           ▓████████▓▓▓▓██▓╫╫╫Ñ\n")
+		escreva("                                           ▓████▓████▓▓▓█▓▓▌╫╫`\n")
+		escreva("                                       .«╗▓██▓▓▓███████▓▌▓█▀`\n")
+		escreva("                       ╓╦ΦΦ╗▄µ╓,,╓▄▄╗▓▓╫Å╨`▐█▓▓▓███████▓██▌\n")
+		escreva("                 ^╜▀▀▀╝▓▓▓▓▓▓▓▓▓▓▓▀▀╨`     j█▓▓▓██████▌╫██▓\n")
+		escreva("                      ╔╫▓▓▓▓▓▌    .         █▓███████▌▓█▓██\n")
+		escreva("                    ,╓╣▓▓▓▓███▓▓▓▓▌         ▓████████╫▓▓▓██\n")
+		escreva("                 ╟╫▓▓▓▓▓▓▓▓██████▀          ╣███████╫▓█▓▓██⌐\n")
+		escreva("                  ╙╣▓▓▓████████▀            ║█████▓▌▓▓▓█▓██M\n")
+		escreva("                    `╙▀▀▓▓▓▀▀^              ║█████▓╫██▓████▌\n")
+		escreva("                                            ╟██████▀▀███▓██▌\n")
+		escreva("                                            ║╙`████H ▓▓█▓███\n")
+		escreva("                                            \"  ▓███▌ j▓█████▄\n")
+		escreva("                                               ▓███▌ ▐██████▓\n")
+		escreva("                                              ╔▓▓███ ▐▓██▓███M\n")
+		escreva("                                          :╦╬╫╫▓▀▀▀╨  ▓▓▓▓█▀`\n")
+		escreva("                                                      ╣▌╫▓M\n")
+
+		escreva("\nPADRE GASCOIGNE AVANÇA")
+		
+		enquanto (vida_inimigo > 0){
+			
+			escrevaslow("|" + nome + ": " + vidabase, VELOCIDADE)
+			escrevaslow("|PADRE GASCOIGNE: " + vida_inimigo, VELOCIDADE)
+			
+			kombat()
+			
+			vidabase = vidabase - dano 
+			
+			escrevaslow("\nVoce tomou " + dano + " de dano.", DIALOGO)
+			escrevaslow("\nsua vida agora eh: " + vidabase, DIALOGO)
+
+			se(vida_inimigo == 3200){
+				escrevaslow("Que cheiro é esse? ... O sangue doce, ah, ele canta para mim.\nÉ o suficiente para deixar um homem doente.", DIALOGO)
+			}
+			se(vida_inimigo <= (vida_inimigo / 2)){
+				vida_inimigo = vida_inimigo + 3000
+				vidabase = vidabase + 2500
+
+				escrevaslow("\n\nPadre gascoigne começa a gritar, lentamente, voce ve seu corpo, mudando.\n Ele fica maior, garras surgindo em suas maos, pelos cubrindo seu corpo inteiro.\nUma medo primal toma conta do seu corpo, e ele so fala uma coisa, CORRA", DIALOGO)
+				A()
+				limpa()
+				
+
+
+				
+			}
+			se(vida_inimigo <= 0){
+			escreva("\n ██▓███   ██▀███  ▓█████   ██████  ▄▄▄          ▄▄▄       ▄▄▄▄    ▄▄▄     ▄▄▄█████▓ ██▓▓█████▄  ▄▄▄  ")       
+			escreva("\n▓██░  ██▒▓██ ▒ ██▒▓█   ▀ ▒██    ▒ ▒████▄       ▒████▄    ▓█████▄ ▒████▄   ▓  ██▒ ▓▒▓██▒▒██▀ ██▌▒████▄  ")     
+			escreva("\n▓██░ ██▓▒▓██ ░▄█ ▒▒███   ░ ▓██▄   ▒██  ▀█▄     ▒██  ▀█▄  ▒██▒ ▄██▒██  ▀█▄ ▒ ▓██░ ▒░▒██▒░██   █▌▒██  ▀█▄     ")
+			escreva("\n▒██▄█▓▒ ▒▒██▀▀█▄  ▒▓█  ▄   ▒   ██▒░██▄▄▄▄██    ░██▄▄▄▄██ ▒██░█▀  ░██▄▄▄▄██░ ▓██▓ ░ ░██░░▓█▄   ▌░██▄▄▄▄██    ")
+			escreva("\n▒██▒ ░  ░░██▓ ▒██▒░▒████▒▒██████▒▒ ▓█   ▓██▒    ▓█   ▓██▒░▓█  ▀█▓ ▓█   ▓██▒ ▒██▒ ░ ░██░░▒████▓  ▓█   ▓██▒   ")
+			escreva("\n▒▓▒░ ░  ░░ ▒▓ ░▒▓░░░ ▒░ ░▒ ▒▓▒ ▒ ░ ▒▒   ▓▒█░    ▒▒   ▓▒█░░▒▓███▀▒ ▒▒   ▓▒█░ ▒ ░░   ░▓   ▒▒▓  ▒  ▒▒   ▓▒█░   ")
+			escreva("\n░▒ ░       ░▒ ░ ▒░ ░ ░  ░░ ░▒  ░ ░  ▒   ▒▒ ░     ▒   ▒▒ ░▒░▒   ░   ▒   ▒▒ ░   ░     ▒ ░ ░ ▒  ▒   ▒   ▒▒ ░   ")
+			escreva("\n░░         ░░   ░    ░   ░  ░  ░    ░   ▒        ░   ▒    ░    ░   ░   ▒    ░       ▒ ░ ░ ░  ░   ░   ▒      ")
+						     
+						                                                       
+				mrkrabs = mrkrabs + 1000
+				escrevaslow("\n*Voce recebeu " + mrkrabs + " ecos de sangue*",DIALOGO)
+				
+				vidabase = 250
+				A()
+				pare
+		}
 		}
 
+}
 }
