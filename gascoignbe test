@@ -1,0 +1,549 @@
+
+programa
+{
+	inclua biblioteca Sons
+	inclua biblioteca Texto --> t
+	inclua biblioteca Util --> u
+	
+	cadeia palavra , letra, cheats, nome
+	inteiro quant
+     inteiro classeStats[6]
+     inteiro classe
+     cadeia equip[2]
+     cadeia yn
+     inteiro vidabase = 250
+     inteiro sorteio
+	inteiro mrkrabs = 0
+     inteiro vida_inimigo = 0
+     inteiro janus
+
+	const inteiro VELOCIDADE = 25
+	const inteiro DIALOGO = 33
+
+	funcao escrevaslow(cadeia texto, inteiro velocidade)
+	{
+	 	para(inteiro i=0; i < t.numero_caracteres(texto); i++)
+	 	{
+	 		escreva(t.obter_caracter(texto, i))
+	 		u.aguarde(velocidade)
+
+		}
+
+	}
+
+	funcao A()
+	{
+		cadeia tecla
+		escrevaslow(" [A] ", DIALOGO)
+		leia(tecla)	
+	}
+
+	funcao inicio()
+	{
+	
+				escreva("	 _______  _______  _______  _______  _______  ___   _______  __    _  _______    _______  _______  _______  _______ \n")
+				escreva("	|       ||   _   ||       ||       ||       ||   | |       ||  |  | ||       |  |       ||       ||       ||       |\n")
+				escreva("	|    ___||  |_|  ||  _____||       ||   _   ||   | |    ___||   |_| ||    ___|  |_     _||    ___||  _____||_     _|\n")
+				escreva("	|   | __ |       || |_____ |       ||  | |  ||   | |   | __ |       ||   |___     |   |  |   |___ | |_____   |   |  \n")
+				escreva("	|   ||  ||       ||_____  ||      _||  |_|  ||   | |   ||  ||  _    ||    ___|    |   |  |    ___||_____  |  |   |  \n")
+				escreva("	|   |_| ||   _   | _____| ||     |_ |       ||   | |   |_| || | |   ||   |___     |   |  |   |___  _____| |  |   |  \n")
+				escreva("	|_______||__| |__||_______||_______||_______||___| |_______||_|  |__||_______|    |___|  |_______||_______|  |___|  \n")
+
+		 escreva("------------------------------------------------------aperte e para começar--------------------------------------------------------\n")
+		  	
+		leia(letra)
+		
+           se(letra == "e") {
+           	escrevaslow("Qual seu nome?: ", VELOCIDADE)
+           	leia(nome)                                                                                                                      
+           }
+            
+            escrevaslow("...que nome intrigante.", DIALOGO)
+            escrevaslow("\nQual sua classe?: ", VELOCIDADE)
+            
+            escrevaslow("\n1) Caçador da Igreja de cura\n", VELOCIDADE)
+		  escrevaslow("2) Discípulo da Luz Lunar\n", VELOCIDADE)
+		  escrevaslow("3) Espião de Cainhurst\n", VELOCIDADE)
+		  escrevaslow("4) Primeiro caçador\n", VELOCIDADE)
+		  escrevaslow("5) ???????????\n", VELOCIDADE)
+		  
+
+		  
+
+		 faca {
+			escrevaslow("informe a classe: ",VELOCIDADE)
+			leia(classe)
+		 	
+			escolha(classe){
+				caso 1:
+				{
+					escreva("Caçador da igreja de cura: \n")
+					escreva(" vit: 17\n vig: 17 \n for: 19\n dex: 14\n bld: 12\n arc: 12\n")
+					escreva("Arma branca: Cutelo serrado","\nArma de fogo: Pistola do caçador")
+					escrevaslow("\nDeseja escolher esta classe? Y/N: ", DIALOGO)
+					leia(yn)
+						yn = t.caixa_baixa(yn)
+					se(yn == "y"){
+						classeStats[0] = 17
+						classeStats[1] = 17
+						classeStats[2] = 19
+						classeStats[3] = 14
+						classeStats[4] = 12
+						classeStats[5] = 12
+						equip[0] = "cutelo serrado"
+						equip[1] = "pistola"
+						  	   }
+					
+					pare
+				}
+				caso 2:
+				{
+					escreva("Discípulo da Luz Lunar: \n")
+					escreva(" vit: 16\n vig: 15 \n for: 18\n dex: 15\n bld: 12\n arc: 16\n")
+					escreva("Arma branca: Lamina sagrada de Ludwig","\nArma de fogo: Rifle")
+					escrevaslow("\nDeseja escolher esta classe? Y/N: ", DIALOGO)
+					leia(yn)
+					yn = t.caixa_baixa(yn)
+
+					se(yn == "y"){
+						classeStats[0] = 16
+						classeStats[1] = 15
+						classeStats[2] = 18
+						classeStats[3] = 15
+						classeStats[4] = 13
+						classeStats[5] = 16
+						equip[0] = "lamina sagrada de ludwig"
+						equip[1] = "Rifle"
+							   }
+					pare
+				}
+				caso 3:
+				{
+					escreva("Espião de Cainhurst: \n")
+					escreva(" vit: 15\n vig: 15 \n for: 14\n dex: 19\n bld: 15\n arc: 12\n")
+					escreva("Arma branca: Rakuyo","\nArma de fogo: Evelyn")
+					escrevaslow("\nDeseja escolher esta classe? Y/N: ", DIALOGO)
+					leia(yn)
+					yn = t.caixa_baixa(yn)
+
+					se(yn == "y"){
+						classeStats[0] = 15
+						classeStats[1] = 15
+						classeStats[2] = 14
+						classeStats[3] = 19
+						classeStats[4] = 15
+						classeStats[5] = 12
+						equip[0] = "rakuyo"
+						equip[1] = "evelyn"	
+							   }
+					pare
+				}
+				caso 4:
+				{
+					escreva("Primeiro caçador: \n")
+						escreva(" vit: 19\n vig: 15 \n for: 17\n dex: 18\n bld: 15\n arc: 12\n")
+						escreva("Arma branca: Lamina funeraria","\nArma de fogo: Blunderbuss")
+						escrevaslow("\nDeseja escolher esta classe? Y/N: ", DIALOGO)
+						leia(yn)
+						yn = t.caixa_baixa(yn)
+	
+						se(yn == "y"){
+							classeStats[0] = 19
+							classeStats[1] = 15
+							classeStats[2] = 17
+							classeStats[3] = 19
+							classeStats[4] = 15
+							classeStats[5] = 12
+							equip[0] = "lamina funeraria"
+							equip[1] = "blunderbuss"
+								   }
+				 	pare			
+				}
+				caso 2020:
+				{
+					escreva("Dragao de Dojima: \n")
+						escreva(" vit: 20\n vig: 25 \n for: 30\n spd: 25\n bld: 20\n stl: 25\n")
+						escreva("STYLE: YAKUZA/DRAGAO DE DOJIMA","\nBicicleta")
+						escrevaslow("\nDeseja escolher esta classe? Y/N: ", DIALOGO)
+						leia(yn)
+						yn = t.caixa_baixa(yn)
+	
+						se(yn == "y"){
+							classeStats[0] = 20
+							classeStats[1] = 25
+							classeStats[2] = 30
+							classeStats[3] = 25
+							classeStats[4] = 20
+							classeStats[5] = 25
+							equip[0] = "STYLE: YAKUZA"
+							equip[1] = "Bicicleta"
+								   }
+				 	pare			
+				}
+			}
+			
+		 } enquanto(yn != "y")//Fim enquanto
+		limpa()
+		
+		 	gascoigne(4000)
+	}
+			
+
+
+
+	funcao batalha(inteiro numero_turnos, inteiro vida_homiruim){
+		
+		inteiro dano
+		
+		vida_inimigo = vida_homiruim
+		vidabase = vidabase * classeStats[0]
+		dano = (vidabase - vida_inimigo) / 3
+		
+		bixospeak()
+		
+		enquanto (numero_turnos > 0 e vida_inimigo > 0){
+			
+			cadeia frase = "\n|==TURNO: " + numero_turnos
+			 
+			se(classe == 2020){
+			
+			escrevaslow(frase, VELOCIDADE)
+			escrevaslow("|VIDA: " + vidabase, VELOCIDADE)
+			escrevaslow("|VITIMA: " + vida_inimigo, VELOCIDADE)
+			
+			kombat()
+			numero_turnos --
+
+			vidabase = vidabase - dano 
+			
+			escrevaslow("\nVoce tomou " + dano + " de dano.", DIALOGO)
+			escrevaslow("\nsua vida agora eh: " + vidabase, DIALOGO)
+
+			
+			se(vida_inimigo <= 0){
+				escrevaslow("\n*A fera parou de se mover, Bom trabalho!*", DIALOGO)
+				mrkrabs = mrkrabs + 500
+				escrevaslow("\n*Voce recebeu " + mrkrabs + " ecos de sangue*",DIALOGO)
+				
+				vidabase = 250
+				A()
+				pare
+			}
+			se(numero_turnos <= 0){
+				escrevaslow("\n*A fera escapou, mas nao por muito tempo*", DIALOGO)
+				A()
+				pare
+			}
+			se(vidabase <= 0){
+				escreva("╦  ╦╔═╗╔═╗╔═╗  ╔╦╗╔═╗╦═╗╦═╗╔═╗╦ ╦")
+				escreva("╚╗╔╝║ ║║  ║╣   ║║║║ ║╠╦╝╠╦╝║╣ ║ ║")
+				escreva(" ╚╝ ╚═╝╚═╝╚═╝  ╩ ╩╚═╝╩╚═╩╚═╚═╝╚═╝")
+				escrevaslow("aperte a para retornar", VELOCIDADE)
+				A()
+				
+				
+			}
+			}senao{
+			
+			escrevaslow(frase, VELOCIDADE)
+			escrevaslow("|" + nome + ": " + vidabase, VELOCIDADE)
+			escrevaslow("|INIMIGO: " + vida_inimigo, VELOCIDADE)
+			
+			kombat()
+			numero_turnos --
+
+			vidabase = vidabase - dano 
+			
+			escrevaslow("\nVoce tomou " + dano + " de dano.", DIALOGO)
+			escrevaslow("\nsua vida agora eh: " + vidabase, DIALOGO)
+
+			
+			se(vida_inimigo <= 0){
+				escrevaslow("\n*A fera parou de se mover, Bom trabalho!*", DIALOGO)
+				mrkrabs = mrkrabs + 500
+				escrevaslow("\n*Voce recebeu " + mrkrabs + " ecos de sangue*",DIALOGO)
+				
+				vidabase = 250
+				A()
+				pare
+			}
+			se(numero_turnos <= 0){
+				escrevaslow("\n*A fera escapou, mas nao por muito tempo*", DIALOGO)
+				A()
+				pare
+			}
+			se(vidabase <= 0){
+				escreva("╦  ╦╔═╗╔═╗╔═╗  ╔╦╗╔═╗╦═╗╦═╗╔═╗╦ ╦")
+				escreva("╚╗╔╝║ ║║  ║╣   ║║║║ ║╠╦╝╠╦╝║╣ ║ ║")
+				escreva(" ╚╝ ╚═╝╚═╝╚═╝  ╩ ╩╚═╝╩╚═╩╚═╚═╝╚═╝")
+				escrevaslow("aperte a para retornar", VELOCIDADE)
+				A()
+				
+				
+			}
+
+			}
+		}
+
+		//verificar se venceu ou nao a batalha depois de n turnos
+	}
+	
+
+	funcao kombat(){ //funcao combate
+		
+
+		inteiro arma
+		inteiro kapow = 35
+		inteiro gun = 25
+
+		cadeia frasekapow = "\n*Voce deu " + (kapow * classeStats[2]) + " de dano, continue*"
+		cadeia frasegun = "\n*Voce atirou e deu " + (gun * classeStats[4]) + " de dano, continue*"
+		//se or arma branca: chance de 1 a 3 de causar dano critico
+		//se usar arma de fogo: chance de 50% de estunar e ganhar mais um turno
+		//caso apos estunar usar arma branca, dar dobro de dano 
+		
+		escrevaslow("\nEscolha sua açao: ", VELOCIDADE)
+
+		se(classe == 2020){
+			para(inteiro i=0; i < 2; i++){
+			escreva("\n",i,"° ", equip[i], " ")
+		}
+
+		leia(arma)
+		
+		se(arma == 0){
+			sorteio = u.sorteia(1, 3)
+
+
+			se(sorteio == 1){
+				vida_inimigo = vida_inimigo - (kapow * classeStats[2]) * 5
+				 escrevaslow("\n*COMBO START: Voce da um soco na boca do cara*", DIALOGO)
+				 escrevaslow("\n*voce deu: " + (vida_inimigo - (kapow * classeStats[2]) * 5) + " de dano" , DIALOGO)
+				 vida_inimigo = vida_inimigo - (kapow * classeStats[2])
+				 escrevaslow("\n*COMBO: Voce mete uma bicuda no inimigo*", DIALOGO)
+				 escrevaslow("\n*voce deu: " + (vida_inimigo - (kapow * classeStats[2])) + " de dano" , DIALOGO)
+				 vida_inimigo = vida_inimigo - (kapow * classeStats[2])
+				 escrevaslow("\n*COMBO: Voce da uma voadora no inimigo*", DIALOGO)
+				 escrevaslow("\n*voce deu: " + (vida_inimigo - (kapow * classeStats[2])) + " de dano" , DIALOGO)
+				 escrevaslow("\n*COMBO FINISH*", DIALOGO)
+			}senao{
+				vida_inimigo = vida_inimigo - (kapow * classeStats[2]) *2
+				escrevaslow("\nVoce da um chute na cabeça do cara, oof",DIALOGO)
+				escrevaslow("\n*voce deu: " + (vida_inimigo - (kapow * classeStats[2]) * 2) + " de dano" , DIALOGO)
+			}
+
+			
+		
+		}senao se (arma == 1) {
+			sorteio = u.sorteia(1, 2)
+			se(sorteio == 2)
+			{
+				vida_inimigo = vida_inimigo - (gun * classeStats[4]) * 4
+				escrevaslow("\n*Voce joga sua bicicleta no cara, e magicamente encontra outra ao seu lado*", DIALOGO)
+				escrevaslow("\n*voce deu: " + (vida_inimigo - (gun * classeStats[4]) * 4) + " de dano" , DIALOGO)
+ 			}senao{
+ 				vida_inimigo = vida_inimigo - (gun * classeStats[4]) * 2
+ 				escrevaslow("\n*Voce deu uma bicicletada no cara, oof*",DIALOGO)
+ 				escrevaslow("\n*voce deu: " + (vida_inimigo - (gun * classeStats[4]) * 2) + " de dano" , DIALOGO)
+ 			}
+		}
+		}senao{
+		para(inteiro i=0; i < 2; i++){
+			escreva("\n",i,"° ", equip[i], " ")
+		}
+
+		leia(arma)
+		
+		se(arma == 0){
+			sorteio = u.sorteia(1, 2)
+
+
+			se(sorteio == 1){
+				vida_inimigo = vida_inimigo - (kapow * classeStats[2]) * 2
+				 escrevaslow("\n*Acerto critico, nao falta muito...*", DIALOGO)
+				 escrevaslow("\n*voce deu: " + (vida_inimigo - (kapow * classeStats[2]) * 2) + " de dano" , DIALOGO)
+			}senao{
+				vida_inimigo = vida_inimigo - (kapow * classeStats[2])
+				escrevaslow(frasekapow,DIALOGO)
+			}
+
+			
+		
+		}senao se (arma == 1) {
+			sorteio = u.sorteia(1, 2)
+			se(sorteio == 2)
+			{
+				vida_inimigo = vida_inimigo - (gun * classeStats[4]) * 2
+				escrevaslow("\n*BOOM! headshot, agora e a sua chance, ataca...*", DIALOGO)
+				escrevaslow("\n*voce deu: " + (vida_inimigo - (gun * classeStats[4]) * 2) + " de dano" , DIALOGO)
+ 			}senao{
+ 				vida_inimigo = vida_inimigo - (gun * classeStats[4])
+ 				escrevaslow(frasegun,DIALOGO)
+ 			}
+		}
+		}
+	}
+		
+		funcao bixospeak()//falas que aparecem antes de cada luta(
+		{
+		
+		sorteio = u.sorteia(1, 5)
+		 
+		 se(sorteio == 1)
+		 {
+		 	escrevaslow("\nUma fera se aproxima",DIALOGO)
+		 }senao se(sorteio == 2){
+		 	escrevaslow("\nUm atirador lhe avistou", DIALOGO)
+		 }senao se(sorteio == 3){
+		 	escrevaslow("\nUm executor te encontrou", DIALOGO)
+		 }senao se(sorteio == 4){
+		 	escrevaslow("\nAquela coisa antes era humana, agora não é mais", DIALOGO)
+		 }senao se(sorteio == 5){
+		 	escrevaslow("\nCONTEM DOENÇA, MORTE!", DIALOGO)
+		 }
+
+		}
+
+		funcao gascoigne(inteiro vida_homiruim){
+			
+		inteiro dano
+		vida_inimigo = vida_homiruim
+		vidabase = vidabase * classeStats[0]
+		dano = (vidabase - vida_inimigo) / 3
+
+		
+		escreva("                                           ═«═╣███▓▀▀Ü\n")
+		escreva("                                             -▓█▓╫╬▄▓N\n")
+		escreva("                                              ,▓▓▓█▓▓▓▓φ,\n")
+		escreva("                                             ╔████▓███████▄\n")
+		escreva("                                            .████████████▓█▓\n")
+		escreva("                                            ▓████████▓█████▓▓≥\n")
+		escreva("                                           ╔▓▓████████▌█████▓▓▄\n")
+		escreva("                                           ▓█▓████████▓█████▓▓█▄\n")
+		escreva("                                          ╓█▓████████▓███████▓▓▌\n")
+		escreva("                                         .██╩████████▓▓████╫█▓▓M\n")
+		escreva("                                         ╝▀▀╔████████▓▓███▀▓█▓█⌐\n")
+		escreva("                                            ▓███████▓▓▓█▓█ ▓███\n")
+		escreva("                                           ║████████▓▓▓███,▓▓▓▌\n")
+		escreva("                                           ▓████████▓▓▓▓██▓╫╫╫Ñ\n")
+		escreva("                                           ▓████▓████▓▓▓█▓▓▌╫╫`\n")
+		escreva("                                       .«╗▓██▓▓▓███████▓▌▓█▀`\n")
+		escreva("                       ╓╦ΦΦ╗▄µ╓,,╓▄▄╗▓▓╫Å╨`▐█▓▓▓███████▓██▌\n")
+		escreva("                 ^╜▀▀▀╝▓▓▓▓▓▓▓▓▓▓▓▀▀╨`     j█▓▓▓██████▌╫██▓\n")
+		escreva("                      ╔╫▓▓▓▓▓▌    .         █▓███████▌▓█▓██\n")
+		escreva("                    ,╓╣▓▓▓▓███▓▓▓▓▌         ▓████████╫▓▓▓██\n")
+		escreva("                 ╟╫▓▓▓▓▓▓▓▓██████▀          ╣███████╫▓█▓▓██⌐\n")
+		escreva("                  ╙╣▓▓▓████████▀            ║█████▓▌▓▓▓█▓██M\n")
+		escreva("                    `╙▀▀▓▓▓▀▀^              ║█████▓╫██▓████▌\n")
+		escreva("                                            ╟██████▀▀███▓██▌\n")
+		escreva("                                            ║╙`████H ▓▓█▓███\n")
+		escreva("                                            \"  ▓███▌ j▓█████▄\n")
+		escreva("                                               ▓███▌ ▐██████▓\n")
+		escreva("                                              ╔▓▓███ ▐▓██▓███M\n")
+		escreva("                                          :╦╬╫╫▓▀▀▀╨  ▓▓▓▓█▀`\n")
+		escreva("                                                      ╣▌╫▓M\n")
+
+		escreva("\nPADRE GASCOIGNE AVANÇA")
+		
+		enquanto (vida_inimigo > 0){
+			
+			escrevaslow("|" + nome + ": " + vidabase, VELOCIDADE)
+			escrevaslow("|PADRE GASCOIGNE: " + vida_inimigo, VELOCIDADE)
+			
+			kombat()
+			
+			vidabase = vidabase - dano 
+			
+			escrevaslow("\nVoce tomou " + dano + " de dano.", DIALOGO)
+			escrevaslow("\nsua vida agora eh: " + vidabase, DIALOGO)
+
+			
+			}
+			se(vida_inimigo <= 2000){
+				vida_inimigo = vida_inimigo + 3000
+				vidabase = vidabase + 2700
+				dano = (vidabase - vida_inimigo) / 2
+
+				escrevaslow("\n\nPadre gascoigne começa a gritar, lentamente, voce ve seu corpo, mudando.\n Ele fica maior, garras surgindo em suas maos, pelos cubrindo seu corpo inteiro.\nUma medo primal toma conta do seu corpo, e ele so fala uma coisa, CORRA", DIALOGO)
+				A()
+				limpa()
+
+				    escreva("              .,µµ^`,\n")
+        escreva("             ╦╦╦Ü╫` n░\n")
+        escreva("           ╔╦╬╩▓M╫░░╦▄▄,\n")
+        escreva("          ╔╬╫╫╫╫╬╬╬╫╫╫▀▀ÑΦ▓▄,\n")
+        escreva("         ╔▓▓▓▓╬╣╫▓▀▓▓╫▓╫╫╫▓▓K╫▓▓▓▓▓▓▄╗,\n")
+        escreva("       .\"╫▓╫▌╫╫╫▓╫╫▓╫╫╫▀▓█Ñ╣╫Ñ▓███▓█▓▓╫▓╦,\n")
+        escreva("        ╬╣▓╫╫▓╫Ñ╫╬╫╫▓╫▓▓╫▓█H║▓▓████▓▓╫╫╫▄╬N\n")
+        escreva("        ╣▓▓▀▀╫▓╫╬╣╫╫▓▓▌▓▌╣██⌂╫▓▓▓▓█▓╬▓▓▓▓▌▓Φ▄µµ,\n")
+        escreva("        ╟▓▓▓██▓▓╬╫█▓╣▓█▓▓▓██▌╣▓▓▓▓▓▓▓▓▓▓▓▓▓╫▀██▓N\n")
+        escreva("         ▀███████▓╫╫▀▓▓▓▓▓█▓▓▓▓▌▀██▓╫▓▓╫╣▓╫╫╫╫▓█▄\n")
+        escreva("         ╚▓▓▓▓▓▓▓▓▓▓▓█████▓▓████▓╫▓█▓▓▓▓██▓▓╫╫╫╫▓▓▓▓\n")
+        escreva("          ╣▓▓▓▓▓▓▓▓▓████████████▓▓╫▓▓▓██▓████▓▓▓▓╫ÑÑ▀╦,\n")
+        escreva("          ╫▓▓▀▓╫▓████████████████▓╫╬╣▓██▓▓█████▓▓╫╫▄╬╫╬▓▄,\n")
+        escreva("         :▓▓▓▓▓███████████████████▓▓████████████████████▓▓▓▄µ\n")
+        escreva("         .▓██████▓▓█████▓██████████▓▓█████████████████▓▓▓███▓▓▄,\n")
+        escreva("          ╫█████████████▓███████████████████████████████████▓▓▓▀▓▄\n")
+        escreva("          ╟█████▓███████▓███████████████████████████████████▌▀╫╬╫╫▌\n")
+        escreva("          ║██▓██▓▓██████▓▀╫▓███████████████████████████████▌╫▓▓▌╬╫▓M\n")
+        escreva("          ╙███╫█▓███████▌╬▓▓▀▓█████████████████▓▓▓▓▓▓██████▓▓▓▓▓╫╩╫N\n")
+        escreva("           ███╣▓███████▓█▓▓▓▓▓▓▓█▓█████████████▓▓▓▓▓▓▓▓████▌▀▓▓▓╫╬╫╬\n")
+        escreva("           ▓██▓██▓█████▓███▓█▓▓▓███▓█████████████▓▓▓▓▓▓▓███▓N╠▌▓▓▓▓▓N\n")
+        escreva("           ╣▓█▓██╣▓▓███████▓▓▓▓▓▓▓▓█████▓████████████▓▓▓▓▓▓▌▓▓▓╫▓╫╬╫▓▄▄,\n")
+        escreva("           ╟▓███▓▓▓▓██████▓▓▓▓█▓▓▓▓████▓███▓▓▀▀▀▀▀▀▀███▓██▓▓██▓█▓▓▓▓▓▓▓▌,\n")
+        escreva("           `╨▓███▌╫▓▓▓▀`║██▓▓▀▓▓▓▓▓▓█▓▓███▌╫╫ÑÜ░░╦╫╫╫▓██▓▓▓███████████▓█▓▓╫⌐\n")
+        escreva("             ]███▌╣▓▓╨  ▓██▓▓╫▓▓▓▓█▓▓▓█▓▓▌╣╫╫K╦╬╬╬╫╫▓▓▓█▓▓▓▓█████▀████▓▓█▌╫▄\n")
+        escreva("            :▓███▌▓▀`  ╔█▓▓▓▌╫╬▓▓▓███▓▌▓▓▌╫╫╫╫╫▓▓▓▓▓▓███▓▓▓▓▓████H  `▀▓██▓▓Ñ\n")
+        escreva("      ,,..,╓╣▓█▓██▀    ╫█▓▓▌╫▓▀╫▓▓▓███▓▓▓▓▓╣▓▓▓▓▓▓▓██▓██▓▓▓▓▓▓████H   ╔▀╨╫╬╫\n")
+        escreva("    \"▀Å▀╫╬╬▓▓▓▓█▌`    .▓█▓▓▓▌╫╫▓████▓███▓╫╫╣▓▓▓▓▓███████▓▓▓▓▓▓▓██▓▓     ╔╣╫▌\n")
+        escreva("        ╬▓▓▓▓▓╫▓M     ╟▓▓▓▓▌╫▓▓▓▓█▓▓▓████▓▓▓▓▓▓▓█▓█████▓▓▓▓▓▓▓▓██▓▓▌      ╚\"\n")
+        escreva("      ╔╬╫╫▓╫▓▓▓▌      ╫╫╫▓▓▓▓▓▓▓▓▓▓▓██████▓▓▓▓▀▓▓██████▓▓▓▓▓▓▓▓███▓▓▌\n")
+        escreva("  ,╔╬╫╨╙╫╫▀╫╣▓▓`      ╬╫╫▓▓▓▓╫╫╫▓▓▓█████████▓▓▓▓▓▓▓█▓▓▓▓▓▓▓▓▓▓████▓▓▓H\n")
+        escreva(" ╗▌`  ╗Ñ╨╟▀▀▀╫H       ╟╫╫▓▓╬╫╬╫╫╫▓██████████▓▓▓▓▓▓▓██▓▓▓▓▓▓▓▓▓█████▓▓▌\n")
+        escreva(" `   ]╠┘ ╬Ñ ╚Ñ        .▓▓▓▓╫╫▄╫╫╣██████████████▓█▓▓▓▓▓╫╫╫▓▓▓▓▓██▓▓██▓H\n")
+        escreva("     ╫K  ╬N  ╚H      ╔╣▓▓▓▓╫╫▌╣▓▓███████▓█████▓▓▓▓▓██▓╫╫▓▓▓▓▓▓╣▓▓▓▓██▓▌\n")
+        escreva("      `   `         ╔▓▓▌╫╫╫▓▓▓▓▓▓█████▓▓▓▓███▓▓▓▓▓▓▓▓▌╫▓▓╫▓▓▓▓╫▓█▓███▓▌\n")
+        escreva("                   ╔▓▓▓▓▓▓▓▓▓▓▓▓▓▓███▓▓▓▓▌▓██▓▓▓▓▓▓▓▓█╫╫╫╫╫╣▓▓╫╫▓████▓▓⌐\n")
+        escreva("                   ▓█▓▓▓▓██▓▓███▓▓█▓▓▓▓▓▓▓Ü▓██▓▓▓▓▓▓██▌╫╫╫╫▓▓▓╫╫▓███▓▓▓H\n")
+        escreva("                  .█████▓▓▓▓▓▓▓▓╬╬▓██▓▓▓▓▓▓Å████▓▓██▓██╫╫╫╫▓▓╫╫╫▓████▓▓M\n")
+        escreva("                   ▓█████▓▓▓▓▓▓▓▓▓▓███▓▓▓▓▓▌▓██████▓▓▓█▓╫╫╫╫╬╫╫╫╣▓███▓▓Ñ\n")
+        escreva("                   ╙▓███████████████████▓▓▓▌╩████▓▓▓▓▓█▓▌╫╫╫╫╫╬╫╫▓███▓▓▌\n")
+        escreva("                     `╙▀▀▓█████████▓██████▀\"`▓█▓▓▓▌╫▓▓▓▓╩Ñ╬╣╣╫╬╫╫▓███▓▓▌\n")
+        escreva("                          `╙▀███████▓▓████▓H  ``▓▓▓▓▓██▌     `  `╙╨╙╨▀╬Ñ\n")
+        escreva("                              `╙▀████▓█████▓▄   ╟▓▓▓▓█▓▓H             ``\n")
+        escreva("                                  ▀██████████▓▄, ▓▓▓▓▓▓▓Ü\n")
+        escreva("                                   ╙▀▀`▀▀███████▓█▓▓▀▓█▓▌\n")
+        escreva("                                         `▀█████▓███▓▓▓▓▓N\n")
+        escreva("                                         ╗▓█████▓▓█▓▓▓▓█▓▌\n")
+        escreva("                                        ╟▓▓█████▓▓▓▓╫╬▓▓▓▓⌐\n")
+        escreva("                                 ,,≤n╦╦╣▓╫▓█▓▀▀╙╟▓▓▓▓╫╫▓██N\n")
+        escreva("                                 ╙╨╨\"`\"╙╙╙╨`   .╫▌▓▓▓▓▓▓██▌\n")
+        escreva("                                             .j╬▓╫╫▌╫▓▓██▓╩\n")
+        escreva("                                            ╬▓╫▓▓╫▓▌╬▓▌╬▀\n")
+
+	   
+
+				
+			}
+			se(vida_inimigo <= 0){
+			escreva("\n ██▓███   ██▀███  ▓█████   ██████  ▄▄▄          ▄▄▄       ▄▄▄▄    ▄▄▄     ▄▄▄█████▓ ██▓▓█████▄  ▄▄▄  ")       
+			escreva("\n▓██░  ██▒▓██ ▒ ██▒▓█   ▀ ▒██    ▒ ▒████▄       ▒████▄    ▓█████▄ ▒████▄   ▓  ██▒ ▓▒▓██▒▒██▀ ██▌▒████▄  ")     
+			escreva("\n▓██░ ██▓▒▓██ ░▄█ ▒▒███   ░ ▓██▄   ▒██  ▀█▄     ▒██  ▀█▄  ▒██▒ ▄██▒██  ▀█▄ ▒ ▓██░ ▒░▒██▒░██   █▌▒██  ▀█▄     ")
+			escreva("\n▒██▄█▓▒ ▒▒██▀▀█▄  ▒▓█  ▄   ▒   ██▒░██▄▄▄▄██    ░██▄▄▄▄██ ▒██░█▀  ░██▄▄▄▄██░ ▓██▓ ░ ░██░░▓█▄   ▌░██▄▄▄▄██    ")
+			escreva("\n▒██▒ ░  ░░██▓ ▒██▒░▒████▒▒██████▒▒ ▓█   ▓██▒    ▓█   ▓██▒░▓█  ▀█▓ ▓█   ▓██▒ ▒██▒ ░ ░██░░▒████▓  ▓█   ▓██▒   ")
+			escreva("\n▒▓▒░ ░  ░░ ▒▓ ░▒▓░░░ ▒░ ░▒ ▒▓▒ ▒ ░ ▒▒   ▓▒█░    ▒▒   ▓▒█░░▒▓███▀▒ ▒▒   ▓▒█░ ▒ ░░   ░▓   ▒▒▓  ▒  ▒▒   ▓▒█░   ")
+			escreva("\n░▒ ░       ░▒ ░ ▒░ ░ ░  ░░ ░▒  ░ ░  ▒   ▒▒ ░     ▒   ▒▒ ░▒░▒   ░   ▒   ▒▒ ░   ░     ▒ ░ ░ ▒  ▒   ▒   ▒▒ ░   ")
+			escreva("\n░░         ░░   ░    ░   ░  ░  ░    ░   ▒        ░   ▒    ░    ░   ░   ▒    ░       ▒ ░ ░ ░  ░   ░   ▒      ")
+						     
+						                                                       
+				mrkrabs = mrkrabs + 1500
+				escrevaslow("\n*Voce recebeu " + mrkrabs + " ecos de sangue*",DIALOGO)
+				
+				vidabase = 250
+				A()
+				
+		}
+		}
+
+}
+
