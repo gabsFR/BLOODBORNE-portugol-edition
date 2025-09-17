@@ -592,7 +592,7 @@ programa
 				A()
 				limpa()
 
-				    escreva("              .,µµ^`,\n")
+		escreva("              .,µµ^`,\n")
         escreva("             ╦╦╦Ü╫` n░\n")
         escreva("           ╔╦╬╩▓M╫░░╦▄▄,\n")
         escreva("          ╔╬╫╫╫╫╬╬╬╫╫╫▀▀ÑΦ▓▄,\n")
