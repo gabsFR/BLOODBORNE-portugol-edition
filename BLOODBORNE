@@ -272,6 +272,37 @@ programa
 
 		 	huntersdream2()
 		 	limpa()
+
+		 	escrevaslow("Acordando do sonho do caçador, voce começa a explorar o lugar em que voce se encontra.\nUma placa escrita \"DISTRITO DA CATEDRAL\" ta presa em um poste.\nE a sua direita tem uma grande escadaria", DIALOGO)
+		 	escrevaslow("\nSubindo as escadas, você encontra um grande portão.\nele não parece ter uma fechadura, nem uma porta ao lado para poder passar.", DIALOGO)
+		 	escrevaslow("\nAperte [ENTER] para chutar o portão\n", DIALOGO)
+		 	ENTER()ENTER()ENTER()ENTER()ENTER()ENTER()ENTER()ENTER()
+		 	escrevaslow("\nCom um ultimo chute, o portão cai no chão com um barulho ensurdecedor.\nVocê ve na distacia pessoas se aproximando.", DIALOGO)
+		 	batalha(10, 1750)
+		 	batalha(10, 2300)
+		 	limpa()
+			escrevaslow("Finalizando a luta, você começa a subir o resto das escadas, voce fica alguns minutos andando e evitando cobate, até chegar as portas de uma gigantesca catedral.", DIALOGO)
+			escrevaslow("\nDentro da imensa catedral, você ve uma mulher com roupas brancas, rezando, segurado um medalhão contra seu peito.", DIALOGO)
+			escrevaslow("\nEla começa gritar freneticamente, seu corpo se expandindo, crescendo, mudando.\nSeu sangue espalhado pelas estatuas em sua frente.\nAinda segurando seu medalhão, ela vira para te encarar.", DIALOGO)
+			ENTER()
+			vigario(5000)
+			limpa()
+			escrevaslow("O gigantesco corpo de Vicar amelia começa a se desintegrar, o altar em que antes rezava, carregava o crânio de um cervo.\nSem nada pra fazer e onde ir, você encosta no crânio e desmaia.\n", DIALOGO)
+			ENTER()
+			escreva("  oooooooooooo ooooo ooo        ooooo \n")
+			escreva("   888'     `8 `888' `88.       .888' \n")
+			escreva("   888          888   888b     d'888  \n")
+			escreva("   888oooo8     888   8 Y88. .P  888  \n")
+			escreva("   888          888   8  `888'   888  \n")
+			escreva("   888          888   8    Y     888  \n")
+			escreva("  o888o        o888o o8o        o888o \n")
+			escrevaslow("\nCREDITOS:\n", VELOCIDADE)
+			escrevaslow("\nJOGO: Gabriel Fonseca Ramos\n", VELOCIDADE)
+			escrevaslow("\nBLOODBORNE: FROMSOFTWARE / HIDETAKA MIYAZAKI\n", VELOCIDADE)
+               escrevaslow("\nCODIGO PERSONAGEM SECRETO: 2020\n", VELOCIDADE)      
+                                    
+                                    
+		 	
 	}
 			
 
@@ -956,5 +987,84 @@ programa
 	      		
 	      	}enquanto(makita != 3)
 	      }
+
+	      
+		funcao vigario(inteiro vida_homiruim){
+			
+			inteiro dano
+			vida_inimigo = vida_homiruim
+			vidabase = vidabase * classeStats[0]
+			dano = (vidabase - vida_inimigo) / 3
+	
+		escreva("                              ╬    ║\n")
+		escreva("                        ¼ Φ  ╓ ▌Φ╝╨\n")
+		escreva("                        ▀▄╙▓▓▄▓▌ ,p═ⁿ\n")
+		escreva("                  .,╓╦KΦ▀▓▓╣▀╨ `╙└\n")
+		escreva("            `▓▓▓N╫╫╬Φ▓▓╫╫╫╣╫▓╫▓▄╗,\n")
+		escreva("             ▐▓▓▓▓▓▓▓▓▓███▓╫╫▓╣▓▓╫▓╫Ñ╦w.\n")
+		escreva("               `⌠⌠╨▀▓▓▓▓▓▓▓▀╫▓╬▓╫╫▓▓╫╫▓╫╫╫╫▄▄▄▄▄▄╥\n")
+		escreva("              `▌▀▀▓▓▀▀▓╣▀▓╫▌▓▓▓╫▓▓▓╫╫╫▌▓╫╫╫╫╫╫╫▀▓█▓µ\n")
+		escreva("               `▀╨╫▀▀▓▓▓▓█▓▓▓▀▓▓▓▓▌╫▓╫▌╫╬╫╫╫╫╬╫╣▓╫▀D     .\n")
+		escreva("                    \" ╙╨▓██▓▓▓▓▓█▓▌▓▓▓▓▓▓▓╫╫╫╫╫╫▓╫▓╫▓╫N╦▀\n")
+		escreva("                       ,▓▓▓▓▓▓▀▌▓▌▓▓▓▌▓▓▓▓▓▓╫╫▓╬▓╫▌╫▓▓▌▓╫╬▓╫╗╕   .\n")
+		escreva("                       ╫▓▌▐▌▓Ñ ;╙``▀▓▓▓▓▓▓▓╫▓╫╫▓▓╫╣╫█▓▌▓▓▓▓▓╫╬,,╙÷,\n")
+		escreva("                    ╔╗╬▓▀╟▓▓▓      `▓▓▓▓██▓╫▌╫▌╬▓╫╫╣▓▓╫▓▓▓▓▓╫╫N¬\n")
+		escreva("                   .╩╠╣▌  `       ▄▄▓▓▓▓██▌╫▌▓▓╫▌╫╫╫╣╫▌╬╫▓▓▓▓▀╫Ñ\n")
+		escreva("                    `\"╙          j▄█▓▓▌▓▓▓▌╣╫▓▓╫▓▓╫╬▓╫▓▓▓▓▓▓▓▌╣▄,\n")
+		escreva("                                ╓▓██▀╣╫▓▓█▓▓╣▓▓▌╫▌▌▓▓▓▓▓▓▓▓▓▓▓▓▓▀φ\n")
+		escreva("                               ╔▓██ ]▓▓▓▓▓██▓▓▓▓▓▓▓▓╫▓▓▓╫▓███▓▓▓ ╙R\n")
+		escreva("                           ,,,╓▓██⌐,\"▓▓▓▓████▓▓▓▓▓▓▓▓╫╬╫▓▓█████▌▓▄,\\\n")
+		escreva("                            `║▓▓▓╩^`]▓▓▓▓█▓███▓▓▓█▓▓▓╫╫▓▓▓▓▓▌▓╫╫▓▓▓▒╦\n")
+		escreva("                            ╟▓▓▓w   `╙▀▀▀▓▀███▓█████▓▓▓▓▓▓█▌▓▌╫╫╫▓▓▓╫╫N\n")
+		escreva("                ,╓╖╓▄      ╗╫▓M╕         └,▓▓▌╬▓▓██▓▌▓▓▓╣╫╫▓▓▌╫╫╫╫▓▓▓▓╫\n")
+		escreva("             ╓Φ▓▓▀███▓▄▄▄▄▓▓▌` ┘     --]╠▀▓▓████▓█▀▀╣▓▓▓▓▓▓█▓█▀▓╫╫▀╫╫▓╫\n")
+		escreva("         .≤Φ╫▀▀▀   ╙▀▀▀▀▀▀▀╨                        \"╧  ``      ``\"\"\"\"╙\n")
+		
+			escreva("\nVIGARIO AMELIA  AVANÇA")
+			
+			enquanto (vida_inimigo > 0){
+			escrevaslow("|" + nome + ": " + vidabase, VELOCIDADE)
+			escrevaslow("|VIGARIO AMELIA: " + vida_inimigo, VELOCIDADE)
+			
+			kombat()
+			
+			vidabase = vidabase - dano 
+			
+			escrevaslow("\nVoce tomou " + dano + " de dano.", DIALOGO)
+			escrevaslow("\nsua vida agora eh: " + vidabase, DIALOGO)
+	
+			se(vidabase <= 0)
+			{
+				escreva("╦  ╦╔═╗╔═╗╔═╗  ╔╦╗╔═╗╦═╗╦═╗╔═╗╦ ╦")
+				escreva("╚╗╔╝║ ║║  ║╣   ║║║║ ║╠╦╝╠╦╝║╣ ║ ║")
+				escreva(" ╚╝ ╚═╝╚═╝╚═╝  ╩ ╩╚═╝╩╚═╩╚═╚═╝╚═╝\n")
+				ENTER()
+				pare
+			}
+					
+				
+				
+			}//fim do enquanto
+				
+				escreva("\n ██▓███   ██▀███  ▓█████   ██████  ▄▄▄          ▄▄▄       ▄▄▄▄    ▄▄▄     ▄▄▄█████▓ ██▓▓█████▄  ▄▄▄  ")       
+				escreva("\n▓██░  ██▒▓██ ▒ ██▒▓█   ▀ ▒██    ▒ ▒████▄       ▒████▄    ▓█████▄ ▒████▄   ▓  ██▒ ▓▒▓██▒▒██▀ ██▌▒████▄  ")     
+				escreva("\n▓██░ ██▓▒▓██ ░▄█ ▒▒███   ░ ▓██▄   ▒██  ▀█▄     ▒██  ▀█▄  ▒██▒ ▄██▒██  ▀█▄ ▒ ▓██░ ▒░▒██▒░██   █▌▒██  ▀█▄     ")
+				escreva("\n▒██▄█▓▒ ▒▒██▀▀█▄  ▒▓█  ▄   ▒   ██▒░██▄▄▄▄██    ░██▄▄▄▄██ ▒██░█▀  ░██▄▄▄▄██░ ▓██▓ ░ ░██░░▓█▄   ▌░██▄▄▄▄██    ")
+				escreva("\n▒██▒ ░  ░░██▓ ▒██▒░▒████▒▒██████▒▒ ▓█   ▓██▒    ▓█   ▓██▒░▓█  ▀█▓ ▓█   ▓██▒ ▒██▒ ░ ░██░░▒████▓  ▓█   ▓██▒   ")
+				escreva("\n▒▓▒░ ░  ░░ ▒▓ ░▒▓░░░ ▒░ ░▒ ▒▓▒ ▒ ░ ▒▒   ▓▒█░    ▒▒   ▓▒█░░▒▓███▀▒ ▒▒   ▓▒█░ ▒ ░░   ░▓   ▒▒▓  ▒  ▒▒   ▓▒█░   ")
+				escreva("\n░▒ ░       ░▒ ░ ▒░ ░ ░  ░░ ░▒  ░ ░  ▒   ▒▒ ░     ▒   ▒▒ ░▒░▒   ░   ▒   ▒▒ ░   ░     ▒ ░ ░ ▒  ▒   ▒   ▒▒ ░   ")
+				escreva("\n░░         ░░   ░    ░   ░  ░  ░    ░   ▒        ░   ▒    ░    ░   ░   ▒    ░       ▒ ░ ░ ░  ░   ░   ▒      ")
+						     
+						                                                       
+				mrkrabs = mrkrabs + 2000
+				escrevaslow("\n*Voce recebeu " + mrkrabs + " ecos de sangue*\n",DIALOGO)
+				
+				vidabase = 250
+				ENTER()
+				
+										
+				}
+			
+			//fim da funcao gascoigne
 	//fim do programa
 } 
