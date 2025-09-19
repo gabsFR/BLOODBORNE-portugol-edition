@@ -16,8 +16,8 @@ programa
      inteiro vida_inimigo = 0
      inteiro janus
 
-	const inteiro VELOCIDADE = 0
-	const inteiro DIALOGO = 0
+	const inteiro VELOCIDADE = 20
+	const inteiro DIALOGO = 34
 
 	funcao escrevaslow(cadeia texto, inteiro velocidade)
 	{
