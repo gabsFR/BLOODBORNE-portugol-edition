@@ -233,8 +233,9 @@ programa
 		 	{
 		 		escrevaslow("\nVoce come musgo da parede, nada aparenta ter acontecido mais voce se sente melhor", DIALOGO)
 		 		escrevaslow("\nO musgo tava uma delicia, mais vida que segue, voce continua.\nApos alguns minutos andando e evitando criaturas, voce se ve enfrente a um tunel.", DIALOGO)
+		 		vidabase = vidabase + 50
 		 		escrevaslow("\nNo fundo do tunel, voce se depara com um porco gigante, ele começa a correr em sua direçao.", DIALOGO)
-		 		escrevaslow("\n*aperte a repetidamente para correr" + "\n", DIALOGO)
+		 		escrevaslow("\n*aperte [ENTER] repetidamente para correr" + "\n", DIALOGO)
 		 		ENTER()ENTER()ENTER()ENTER()ENTER()ENTER()
 		 	}
 		 	se(janus == 2)
@@ -246,7 +247,7 @@ programa
 				limpa()
 		 		escrevaslow("\nVoce se sente otimo apos roubar aquele cara aleatorio, mais vida que segue, voce continua.\nApos alguns minutos andando e evitando criaturas, voce se ve enfrente a um tunel.", DIALOGO)
 		 		escrevaslow("\nNo fundo do tunel, voce se depara com um porco gigante, ele começa a correr em sua direçao.", DIALOGO)
-		 		escrevaslow("\n*aperte a repetidamente para correr" + "\n", DIALOGO)
+		 		escrevaslow("\n*aperte [ENTER] repetidamente para correr" + "\n", DIALOGO)
 		 		ENTER()ENTER()ENTER()ENTER()ENTER()ENTER()
 		 	}
 		 	se(janus == 1)
@@ -258,13 +259,18 @@ programa
 		 		limpa()
 		 	}
 
-		 	escrevaslow("surpreendentemente, voce consegue fugir daquele porco gigante.\nInfelizmente, nao tem como voltar por onde voce veio,\nA cabeça do porco ta entalada na porta, o unico caminho e subindo essa escada", DIALOGO)
-		 	escrevaslow("\nContinuando sua subida, voce sobe um par de escadas e se ve dentro de um cemiterio.\nEm sua frente a um homem, ele tem ta usando um tipo de casaco, um chapeu e ele tem faixas pelos olhos\n", DIALOGO)
+		 	escrevaslow("Surpreendentemente, voce consegue fugir daquele porco gigante.\nInfelizmente, nao tem como voltar por onde voce veio,\nA cabeça do porco ta entalada na porta, o unico caminho e subindo essa escada", DIALOGO)
+		 	escrevaslow("\nContinuando sua subida, voce sobe um par de escadas e se ve dentro de um cemiterio.\nEm sua frente a um homem, ele esta usando um tipo de casaco, um chapeu e ele tem faixas cobrindo seus olhos\n", DIALOGO)
 		 	escrevaslow("\nEle esta decepando um corpo, com oque parece ser um machado, ele te avista\n", DIALOGO)
 		 	escrevaslow("\"..Feras por toda a cidade...\n...Você será uma delas, mais cedo ou mais tarde...\"\n",DIALOGO)
 		 	ENTER()
 			limpa()
 		 	gascoigne(4000)
+		 	limpa()
+
+		 	escrevaslow("O corpo de Gascoigne cai bruscamente no chão, rosto distorcido pelo flagelo que assombra esta cidade.\nEnrolado em seu pescoço, você encontra uma chave.", DIALOGO)
+		 	escrevaslow("\nSubindo as escadas do cemitério, voce destranca o portão usando a chave, após alguns minutos de caminhada, voce se encontra dentro de uma Catedral.\nPotes e bacias com incenso ao seu redor, e no meio da sala, outra lâmpada.", DIALOGO)
+		 	escrevaslow("\nMais uma vez, você adentra o Sonho do caçador.\nOlhando ao seu redor, nada aparenta ter mudado, mas voce avista alguem, a mulher de antes aparenta ter acordado.",DIALOGO)
 	}
 			
 
@@ -515,6 +521,58 @@ programa
 
 			senao se(path == 3){
 				escrevaslow("Voce decide subir as escadas, ao subir, voce encontra as portas de uma pequena igreja. Dentro, voce ve um senhorzinho em uma cadeira de rodas, ele sorri ao ver voce", DIALOGO)
+
+	   escreva("   								▐████████████▌,,,,\n")
+        escreva("                                        ▐██████████████████▓M\n")
+        escreva("                                     ,▄▄███████████▓███▓╖   ,╖\n")
+        escreva("                                   ▓█████████████▓▓██▓▓▓╬@███Ü\n")
+        escreva("                                    ▀▀███████▓▓▓▓▓▓▓▓▓▓╢╣▓███▒\n")
+        escreva("                                      ▐██╟▓█▓██▓▓▓▓▓██▓▓╣▓████`\n")
+        escreva("                                    ▄█▓██▓▓██▓▓▓▓▓▓▓██▓▓▓▓▓████▓⌐\n")
+        escreva("                                   ,█████▓▓███▓██▓▓█████▓█▓▓████▌\n")
+        escreva("                                    ▐████████████▓▓███████▓██▓██\n")
+        escreva("                                  g▄██████████████▓██████▓▓█▓███▓w\n")
+        escreva("                                ╓██████████████████████▓▓▓▓████████▄⌐\n")
+        escreva("                               g█████████████████████████████████████▄\n")
+        escreva("                              ▐▓▓█▓▓██████████████████████████████████▌\n")
+        escreva("                             ╓▓▓▓██▓██████████████████████████████▓▓▓▓█⌐\n")
+        escreva("                            ╓████████████████▓█▓▓▓█▓▓▓▓███▓▓▓████▓█████▓\n")
+        escreva("                           ╓██████████████████▓██▓█▓▓▓██████████████▓█▓█▄\n")
+        escreva("                           ▓▓█████████████████████▓▓▓▓█████████▓█████▓▓▓▓⌐\n")
+        escreva("                          ▓██▓███████████████████▓██▓▓██████████████▓▓▓▓▓▓\n")
+        escreva("                         ▓██████████▓█████████████▓▓▓███████▓█████████▓▓▓▓▌\n")
+        escreva("                        ▓██████████▓██▓███████████▓▓████████▓▓█▓▀▓████████▓\n")
+        escreva("                         `,██████████▀████▓██████▓▓▓▓█████▓▓████,█████████\n")
+        escreva("                          ▐██████████▓███████████▓▓▓▓█████████████████████W\n")
+        escreva("                          ██████████▓▓▓████████████▓████████████████████▓▓█\n")
+        escreva("                          ╙████████████▓▓██████████▓▓█████████████████▓▓▓██C\n")
+        escreva("                           ▓█████████████▓▓▓▓███████▓████████▓▓██▓▓▓▓██████\n")
+        escreva("                          ▐▓████╙█▀███████▓███████████████▓▓▓██▓▓▓▓▓▓█████▒\n")
+        escreva("                         ╓██████ █░▓████████▓▓╣╢▓██████▓▓▓▓█▓▓▓▓█▓▓████████\n")
+        escreva("                         ▓████▌▓ ▓▓▓█▓█████▓▓▓▓▓▓▓▓▓▓▓▓▀▓▓▓▓▓▓▓█████▓████▓█▄▄\n")
+        escreva("                     ,╓╖▓█▓▓▓█▓▓▓▓▓▓██▓▓████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓▓▓▓▓]██▓▓▓▓██▓ ╓\n")
+        escreva("                    á█▀▓▓█████▓▓▓▓▓▓▓▓▓▓▓█████▓▓▓▓▓▓███████████▓▓▓▓▓▓████████▓███\n")
+        escreva("                   ▐█▌▐▓▓███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███▓▓▓▓▓█████████▓▓▓▓▓▓▓▓▓▓▓██████▓▌▐█▌\n")
+        escreva("                  .█▓ ▓▓███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██████████████▓▓█▓▓▓▓▓▓▓▓▓▓▓█████▓▓j█▓\n")
+        escreva("                  ▐▓▌]▓▓█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓████████████▓████▓▓▓▓▓▓▓▓▓▓████▓▓ █▓\n")
+        escreva("                  ▓▓ ▐▓▓▌██▓▓▓▓▓▓▓▓▓▓█▓▓▓▓▓███████████████▓██████▓▓▓▓▓▓▓▓▓███▓▓ ▓▓[\n")
+        escreva("                 j▓▓ ▓▓▓Ü█▓▓▓▓▓▓▓▓▓▓████████████████████████████▓▓▓▓▓▓▓▓▓▓███▓▓ ▐█▌\n")
+        escreva("                 ]█▒ ▓▓█▄███▓▓▓▓▓▓▓▓▓████████████████████████████▓▓▓▓▓▓▓▓▓███▓▓∩]█▓\n")
+        escreva("                 ▐▓N]▓▓█▀██▓█▓▓███▓▓▓████████████████████████████▓▓▓▓▓▓▓▓█████▓C █▓\n")
+        escreva("                 ▐▓C]▓▓▓╟▓█▓▓▓▓▓▓▓▓▓▓████▓████▓█████▓▓█████████▓▓▓▓▓▓▓▓▓▓██▌██▓C █▓\n")
+        escreva("                 ▓▓C▐▓▓▓▓██▓▓▓▓▓▓▓▓▓▓██████████████████████████▓▓████▓▓▓▓██▌▐█▓@ █▓\n")
+        escreva("                 ▓█⌐▐▓▓▌▐██▓█▓██▓▓▓▓▓█████████████████████████████▓██▓▓▓▓█████▓N █▓\n")
+        escreva("                 ▓█⌐▐▓█▓▓█▓███████▓▓▓▓█████████████████████████▓███▓▓▓▓▓▓███▐█▓N █▓\n")
+        escreva("                 ▓█⌐▐▓▓▌▐▓████████▓▓▓▓██████████████████████████████▓▓▓▓▀███▐█▓Ü █▓\n")
+        escreva("                 ▓█C▐▓▓▌╟▐███████▓▓▓▓▓█████████████████████████▓███████▓ ]██▓█▓Ç █▓\n")
+        escreva("                 ▐█▓▓▓▓▌▒█▓▓▓██▓██▓▓▓▓███████████████████████████▓▓█▓▓▓▓ ]██▓█▓█▓██\n")
+        escreva("                 ]█Ç ▓▓▓▌█▌▓███▓▓▓▓▓▓▓█████████████████████████▓▓█▓███▓▌ ]██▐█▓Ü ██\n")
+        escreva("                  █▌ ▓▓▓j█▀▓███▓▓▓▓▓▓▓▓████████████████████████▓██████▓▓ ]███▓▓Cj██\n")
+        escreva("                  ▓▓ ▓▓▓▓█]███▓▓▓▓▓▓▓████████████████████████████▓████▓▌  ███▓▓∩]██\n")
+        escreva("                  ▐█∩▐▓▓█▌ ██▓▓███████████████████████████████▓▓██▓▓█▓▓Ñ  ███▓▓H▐█▌\n")
+        escreva("                   ▓▓ ▓▓▓C┌██  ▓██████████████████████▓▓██████▓▓██▓█▓▓▓⌐  ▓██▓█▓██C\n")
+        escreva("                   \"▓▓▓▓▓▄▓█Ñ ┌▓███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓▓▓▓▓▓▓▓█████▓██▓▓   ]█▓▓███▌\n")
+        
 				escrevaslow("\nAh-hah, você deve ser o novo caçador. Bem-vindo ao Sonho do Caçador.\nEste será seu lar, por enquanto. Eu sou... Gehrman, amigo de vocês, caçadores.\nVocês certamente devem estar meio atordoados agora, mas não pensem muito nisso.\nApenas saiam e matem algumas feras. É para o seu próprio bem. Sabem, é só o que os caçadores fazem! Vocês vão se acostumar...", DIALOGO)
 				escrevaslow("Voce desce as escadas de novo", DIALOGO)
 			}
@@ -672,9 +730,6 @@ programa
 
 				
 			} //fim do enquanto
-
-						
-			se(vida_inimigo <= 0){
 				
 				escreva("\n ██▓███   ██▀███  ▓█████   ██████  ▄▄▄          ▄▄▄       ▄▄▄▄    ▄▄▄     ▄▄▄█████▓ ██▓▓█████▄  ▄▄▄  ")       
 				escreva("\n▓██░  ██▒▓██ ▒ ██▒▓█   ▀ ▒██    ▒ ▒████▄       ▒████▄    ▓█████▄ ▒████▄   ▓  ██▒ ▓▒▓██▒▒██▀ ██▌▒████▄  ")     
@@ -687,14 +742,218 @@ programa
 						     
 						                                                       
 				mrkrabs = mrkrabs + 1500
-				escrevaslow("\n*Voce recebeu " + mrkrabs + " ecos de sangue*",DIALOGO)
+				escrevaslow("\n*Voce recebeu " + mrkrabs + " ecos de sangue*\n",DIALOGO)
 				
 				vidabase = 250
 				ENTER()
 				
-			}
+				
 			
-		}//fim da funcao gascoigne
+			
+			}//fim da funcao gascoigne
 
+		funcao huntersdream2()//hub q aparece apos cada boss
+		{
+		 inteiro path
+		 logico repetiu = falso
+		 escrevaslow("\nO que voce quer fazer? ",DIALOGO)
+		 
+            escrevaslow("\n1)Falar com a mulher\n", VELOCIDADE)
+		  escrevaslow("2) Comer o musgo ao lado da mulher\n", VELOCIDADE)
+		  escrevaslow("3) Entrar na igreja\n", VELOCIDADE)
+		  escrevaslow("4) Encostar na lampada denovo\n", VELOCIDADE)
+		  
+		 
+		  faca{
+
+		  	se(repetiu == verdadeiro){
+		  		escrevaslow("\nO que voce quer fazer?: ",DIALOGO)
+		  	}
+		  	
+		 	leia(path)
+		 	
+		 	se(path == 1) 
+		 	{
+
+	   escreva("			                           ▄▄▄█▓▄µ\n")
+        escreva("                                     ██████████▓▄▄▄▄µ\n")
+        escreva("                                    j██████▓████▓███▓▓▓▓ç\n")
+        escreva("                                    j██╢▓▓▓▓╣▒╫▀▓▓████▓▓█\n")
+        escreva("                                     █▓▓▒▒▒▒▒▒▒▒▒▓▓█▓▓▓▓█\n")
+        escreva("                                      ▓▌▒▒▒╣╢▒╢▒▒╫█▓▓▓▓██⌐\n")
+        escreva("                                      ╟█▓▒▓▓▒╢▒▒▒╢▓█▓▓▓▓█H\n")
+        escreva("                                       ▓▌▒▒▀▀▒╣╣▒▓███████▄\n")
+        escreva("                                       ╙▓╣▒▒╫▓▓╢╬▓████████F\n")
+        escreva("                                        ▐█▓▓▓██╣╫▓████████▄\n")
+        escreva("                                         ▓████▓▓╬▓▓██████▀-\n")
+        escreva("                                       ,▓▓████▓▓▓╫███████▓▄╖\n")
+        escreva("                                   ,╥@▓▓▓▓██▓▓▓█╬▓▓▓████▓▓▓▓▓▓▓▄╖\n")
+        escreva("                                ,▓▓▓▓▓▓▓▓█▓█▓███▓▓▓▓████▓▓▓▓▓▓▓▓▓m\n")
+        escreva("                               ╓▓▓▓▓▓▓▓▓▓▓██▓▓▓██▓▓█████▓███▓▓▓▓▓▓▌\n")
+        escreva("                              ╓▓█▓▓▓██▓▓▓▓█▓▓▓██▓▓█████████████████▌\n")
+        escreva("                             ,████▓▓▓▓██▓█▓▓█▓██▓▓▓▓████████▓█▓▓▓█▓█▄\n")
+        escreva("                            ▄▓█████████▓█▓▓▓█▓█████████████▓▓▓▓█▓█▓▓█▌\n")
+        escreva("                           ▄█▓██▓▓▓████████▓▓▓██████▓████████▓▓▓██████▄\n")
+        escreva("                         ╓▓▓█▓▓▓▓██▓██▓███▓██████▓▓▓▓▓█▓█▓▓████████████▌\n")
+        escreva("                        ▓█▓████▓▓▓▓█▓█▓███▓██▓████▓█▓▓███████████████████\n")
+        escreva("                       \"╙███████▓██████▓▓██▓▓▓▓███████▓█████████████████▓▌\n")
+        escreva("                         ▐███████████▓▓▓▓▓▓▓▓█▓█████████████████████████▌'\n")
+        escreva("                        ,████████████▓▓▓▓▓▓▓██▓▓█████████████████████████⌐\n")
+        escreva("                        ██████████▓▓███▓▓▓██▓████████▓████████████████████\n")
+        escreva("                       ▓█████████▓█████▓▓▓▓█▓█████████▓▓████████▓█████████▌\n")
+        escreva("                      ▐█████████▓██▓▓██▓████▓█▓▓██████▓██████████▓█████████W\n")
+        escreva("                     ▐████▓███▓██▓▓▓▓▓█████▓▓╣╢▓▓███████▓████████▓▓█████████▄\n")
+        escreva("                    ▄███▓▓███▓██▓▓▓▓▓▓▓▓▓▓▓█▓▓▓▓▓▓▓███████▓███████▓▓██████████╦\n")
+        escreva("                   ▄████▓██▓███▓▓▓▓▓████▓▓██████▓▓╢▓▓▓████████████████████████▄\n")
+        escreva("                  ▄██▓██▓▓███▓▓▓▓▓▓████████████▓▓╣╢▓▓╢▓████████████████████████▄\n")
+        escreva("                 ▓█████▓███▓▓▓▓█▓▓▓█▓▓██████████▓▓▓▓▓╣██████▓███████████████████▌\n")
+        escreva("               ,▓██████▓█▓▓▓▓╣▓▓████████████████████╫▓█▓████▓▓████████████████████\n")
+        escreva("              ╔███▓███▓▓▓▓▓▓▓▓▓▓▓███████████████████▓▓█▓▓████▓███▓████████████████▓\n")
+        escreva("             ▄████████▓▓██▓██▓▓██████████████████████▓█▓▓█▓███▓████████████████████▓\n")
+        escreva("           ,▓███████████▓▓▓█▓▓▓██████████████████████▓▓▓▓█▓███▓▓█████████████████████,\n")
+        escreva("          ╒▓████▓▓███▓███▓███▓▓██████████████████████▓▓▓▓▓▓▓███▓██████████████████▓███▄\n")
+        escreva("         ╓██████▓███▓█████████████████████████████████▓██▓█████████████████████████████▌\n")
+        escreva("        ╔██████▓█████████████████████████████████████████████████████████████████████████\n")
+        escreva("       ▄██▓███▓████████████████████████████████████████████████████████▓██████████████████w\n")
+        escreva("      ]███████▓██▓███████████████████████████████████████████████████████████████████████▓▌\n")
+        escreva("      ███████▓▓█████████████████████████████████████████████████████████████████████████▓▓▓\n")
+        escreva("      ▓▓███████████████████████████████████████████████████████████████████████████████▓╢]▌`\n")
+        escreva("      └╙▀███████████████████████████████████████████████████████████████████████▓██████▓▒\n")
+        escreva("         ╙█████▓████▓▓███████████████████████████████████████████████████████████████▌ ╙\n")
+        escreva("           ▀██▌` ▀▀███▓█████████████████████████████████████████████████████████████▓\n")
+        escreva("             █▌    '████████████████████████████████████████████████████████████████\n")
+        escreva("             \"▀     █████████████████████████████████████████████████████████▌█████▌\n")
+        escreva("              '    ███████████████████████████████████████████████████████████ ████▌\n")
+		 		escrevaslow("\nVoce decide conversar com a mulher.\n", DIALOGO)
+		 		escrevaslow("\"Olá, bom caçador. Sou uma boneca, aqui neste sonho para cuidar de você.\n Honorável caçador, persiga os ecos do sangue, e eu os canalizarei para a sua força.\nVocê caçará feras... e eu estarei aqui por você, para encorajar seu espírito doentio.\"", DIALOGO)
+		 		Doll()
+		 	}
+		 	
+		 	senao se(path == 2){
+		 		escrevaslow("Hmmm musgo, você se sente melho ao comer o musgo",DIALOGO)
+		 		vidabase = vidabase + 50
+		 	}
+
+			senao se(path == 3){
+				escrevaslow("Mas uma vez, você adentra a igreja e fala com gehrman", DIALOGO)
+				escrevaslow("\"A Igreja da Cura e os Ministros do Sangue que a ela pertencem... \njá foram guardiões dos caçadores, na época do caçador... Ludwig.\nEles trabalhavam e forjavam armas em sua oficina singular.\nHoje, a maioria dos ministros não se lembra dos caçadores.\nPortanto, prestem atenção à mensagem de seus antepassados.\nSubam à Capela de Oedon.", DIALOGO)
+				escrevaslow("*Estranho, ele parece estar falando com ele mesmo", DIALOGO)
+			}
+		 	senao se(path == 4){
+		 		escreva("Mais uma vez, você ncosta na lâmpada e sai do sonho do caçador\n")
+		 		ENTER()
+		 		pare
+		 	}
+		 	
+		 	repetiu = verdadeiro
+		 	
+		   } enquanto(path != 4)
+	      }
+
+	    funcao Doll()
+	      {
+	      	inteiro makita
+		 	logico repetiu = falso
+		 	inteiro upar
+
+		 	
+	      	faca {
+
+			 escrevaslow("\n*O que voce quer fazer?*", DIALOGO)
+			 escrevaslow("\n1) Conversar", VELOCIDADE)
+		 	 escrevaslow("\n2) Transfusão de sangue", VELOCIDADE)
+		 	 escrevaslow("\n3) Parar de conversar\n", VELOCIDADE)
+
+		 	 leia(makita)
+
+		 	 escolha(makita)
+		 	 {
+				caso 1:
+		 	 	{
+		 	 		escrevaslow("\"Ao longo do tempo, incontáveis​caçadores visitaram este sonho.\nOs túmulos aqui permanecem em sua memória. Tudo parece tão distante agora...\"", DIALOGO)
+		 	 		pare
+		 	 	}
+		 	 	caso 2:
+		 	 	{
+		 	 		escrevaslow("\"Muito bem, deixe que os ecos se tornem sua força. Deixe-me ficar perto. Agora feche os olhos...\"\n", DIALOGO)
+		 	 		
+					escreva("\n|a____|TRANSFUSÃO|____|\n")
+		 	 		escreva("|* -  STATS ATUAIS - *|\n")
+		 	 		escreva("|1. VIT - ", classeStats[0],"         *|\n")
+		 	 		escreva("|2. VIG - ", classeStats[1],"         *|\n")
+		 	 		escreva("|3. FOR - ", classeStats[2],"         *|\n")
+		 	 		escreva("|4. SPD - ", classeStats[3],"         *|\n")
+		 	 		escreva("|5. BLD - ", classeStats[4],"         *|\n")
+		 	 		escreva("|6. ARC - ", classeStats[5],"         *|\n")
+		 	 		escreva("|*___________________*|")
+
+		 	 		escrevaslow("\nEscolha para aumentar seus stats: ", VELOCIDADE)
+		 	 		leia(upar)
+
+		 	 		se(upar == 1)
+		 	 		{
+		 	 			escrevaslow("\nVIT: " + classeStats[0] + " --> " + (classeStats[0] + 1), VELOCIDADE)
+		 	 			escrevaslow("\nCusto: 200 ecos de sangue\nMoney atual: " + mrkrabs + "\nAperte [ENTER] para prosseguir:", VELOCIDADE)
+		 	 			ENTER()
+		 	 			mrkrabs = mrkrabs - 200
+		 	 			classeStats[0] = classeStats[0] + 1
+		 	 			limpa()
+		 	 		}
+		 	 		se(upar == 2)
+		 	 		{
+		 	 			escrevaslow("\nVIG: " + classeStats[1] + " --> " + (classeStats[1] + 1), VELOCIDADE)
+		 	 			escrevaslow("\nCusto: 200 ecos de sangue\nMoney atual: " + mrkrabs + "\nAperte [ENTER] para prosseguir:", VELOCIDADE)
+		 	 			ENTER()
+		 	 			mrkrabs = mrkrabs - 200
+		 	 			classeStats[1] = classeStats[1] + 1
+		 	 			limpa()
+		 	 		}
+		 	 		se(upar == 3)
+		 	 		{
+		 	 			escrevaslow("\"FOR: " + classeStats[2] + " --> " + (classeStats[2] + 1), VELOCIDADE)
+		 	 			escrevaslow("\nCusto: 200 ecos de sangue\nMoney atual: " + mrkrabs + "\nAperte [ENTER] para prosseguir:", VELOCIDADE)
+		 	 			ENTER()
+		 	 			mrkrabs = mrkrabs - 200
+		 	 			classeStats[2] = classeStats[2] + 1
+		 	 			limpa()
+		 	 		}
+		 	 		se(upar == 4)
+		 	 		{
+		 	 			escrevaslow("\"SPD: " + classeStats[3] + " --> " + (classeStats[3] + 1), VELOCIDADE)
+		 	 			escrevaslow("\nCusto: 200 ecos de sangue\nMoney atual: " + mrkrabs + "\nAperte [ENTER] para prosseguir:", VELOCIDADE)
+		 	 			ENTER()
+		 	 			mrkrabs = mrkrabs - 200
+		 	 			classeStats[3] = classeStats[3] + 1
+		 	 			limpa()
+		 	 		}
+		 	 		se(upar == 5)
+		 	 		{
+		 	 			escrevaslow("\nVIT: " + classeStats[4] + " --> " + (classeStats[4] + 1), VELOCIDADE)
+		 	 			escrevaslow("\nCusto: 200 ecos de sangue\nMoney atual: " + mrkrabs + "\nAperte [ENTER] para prosseguir:", VELOCIDADE)
+		 	 			ENTER()
+		 	 			mrkrabs = mrkrabs - 200
+		 	 			classeStats[4] = classeStats[4] + 1
+		 	 			limpa()
+		 	 		}
+		 	 		se(upar == 6)
+		 	 		{
+		 	 			escrevaslow("\nVIT: " + classeStats[5] + " --> " + (classeStats[5] + 1), VELOCIDADE)
+		 	 			escrevaslow("\nCusto: 200 ecos de sangue\nMoney atual: " + mrkrabs + "\nAperte [ENTER] para prosseguir:", VELOCIDADE)
+		 	 			ENTER()
+		 	 			mrkrabs = mrkrabs - 200
+		 	 			classeStats[5] = classeStats[5] + 1
+		 	 			limpa()
+		 	 		}
+		 	 		pare
+		 	 	}
+		 	 	caso 3:
+		 	 	{
+		 	 		escrevaslow("*Voce sai de perto dela, continuando sua jornada*", DIALOGO)
+		 	 	}
+		 	 	
+		 	 }
+	      		
+	      	}enquanto(makita != 3)
+	      }
 	//fim do programa
 } 
