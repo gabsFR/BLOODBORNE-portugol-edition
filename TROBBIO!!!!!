@@ -269,6 +269,9 @@ programa
 		 	escrevaslow("O corpo de Gascoigne cai bruscamente no chão, rosto distorcido pelo flagelo que assombra esta cidade.\nEnrolado em seu pescoço, você encontra uma chave.", DIALOGO)
 		 	escrevaslow("\nSubindo as escadas do cemitério, voce destranca o portão usando a chave, após alguns minutos de caminhada, voce se encontra dentro de uma Catedral.\nPotes e bacias com incenso ao seu redor, e no meio da sala, outra lâmpada.", DIALOGO)
 		 	escrevaslow("\nMais uma vez, você adentra o Sonho do caçador.\nOlhando ao seu redor, nada aparenta ter mudado, mas voce avista alguem, a mulher de antes aparenta ter acordado.",DIALOGO)
+
+		 	huntersdream2()
+		 	limpa()
 	}
 			
 
