@@ -929,7 +929,7 @@ programa
 		 	 			ENTER()
 		 	 			mrkrabs = mrkrabs - 200
 		 	 			classeStats[0] = classeStats[0] + 1
-		 	 			limpa()
+		 	 			
 		 	 		}
 		 	 		se(upar == 2)
 		 	 		{
@@ -938,7 +938,7 @@ programa
 		 	 			ENTER()
 		 	 			mrkrabs = mrkrabs - 200
 		 	 			classeStats[1] = classeStats[1] + 1
-		 	 			limpa()
+		 	 			
 		 	 		}
 		 	 		se(upar == 3)
 		 	 		{
@@ -947,7 +947,7 @@ programa
 		 	 			ENTER()
 		 	 			mrkrabs = mrkrabs - 200
 		 	 			classeStats[2] = classeStats[2] + 1
-		 	 			limpa()
+		 	 			
 		 	 		}
 		 	 		se(upar == 4)
 		 	 		{
@@ -956,7 +956,7 @@ programa
 		 	 			ENTER()
 		 	 			mrkrabs = mrkrabs - 200
 		 	 			classeStats[3] = classeStats[3] + 1
-		 	 			limpa()
+		 	 			
 		 	 		}
 		 	 		se(upar == 5)
 		 	 		{
@@ -974,7 +974,7 @@ programa
 		 	 			ENTER()
 		 	 			mrkrabs = mrkrabs - 200
 		 	 			classeStats[5] = classeStats[5] + 1
-		 	 			limpa()
+		 	 			
 		 	 		}
 		 	 		pare
 		 	 	}
@@ -994,9 +994,9 @@ programa
 			inteiro dano
 			vida_inimigo = vida_homiruim
 			vidabase = vidabase * classeStats[0]
-			dano = (vidabase - vida_inimigo) / 3
+			dano = ((vidabase - vida_inimigo) / 3) + 200
 	
-		escreva("                              ╬    ║\n")
+				escreva("                              ╬    ║\n")
 		escreva("                        ¼ Φ  ╓ ▌Φ╝╨\n")
 		escreva("                        ▀▄╙▓▓▄▓▌ ,p═ⁿ\n")
 		escreva("                  .,╓╦KΦ▀▓▓╣▀╨ `╙└\n")
@@ -1013,14 +1013,14 @@ programa
 		escreva("                    `\"╙          j▄█▓▓▌▓▓▓▌╣╫▓▓╫▓▓╫╬▓╫▓▓▓▓▓▓▓▌╣▄,\n")
 		escreva("                                ╓▓██▀╣╫▓▓█▓▓╣▓▓▌╫▌▌▓▓▓▓▓▓▓▓▓▓▓▓▓▀φ\n")
 		escreva("                               ╔▓██ ]▓▓▓▓▓██▓▓▓▓▓▓▓▓╫▓▓▓╫▓███▓▓▓ ╙R\n")
-		escreva("                           ,,,╓▓██⌐,\"▓▓▓▓████▓▓▓▓▓▓▓▓╫╬╫▓▓█████▌▓▄,\\\n")
-		escreva("                            `║▓▓▓╩^`]▓▓▓▓█▓███▓▓▓█▓▓▓╫╫▓▓▓▓▓▌▓╫╫▓▓▓▒╦\n")
-		escreva("                            ╟▓▓▓w   `╙▀▀▀▓▀███▓█████▓▓▓▓▓▓█▌▓▌╫╫╫▓▓▓╫╫N\n")
+		escreva("                           ,,,╓▓██⌐,\"▓▓▓▓████▓▓▓▓▓▓▓▓╫╬╫▓▓█████▌▓▄,\\ \n")
+		escreva("                            `║▓▓▓╩^`]▓▓▓▓█▓███▓▓▓█▓▓▓╫╫▓▓▓▓▓▌▓╫╫▓▓▓▒╦ \n")
+		escreva("                            ╟▓▓▓w   `╙▀▀▀▓▀███▓█████▓▓▓▓▓▓█▌▓▌╫╫╫▓▓▓╫╫\n")
 		escreva("                ,╓╖╓▄      ╗╫▓M╕         └,▓▓▌╬▓▓██▓▌▓▓▓╣╫╫▓▓▌╫╫╫╫▓▓▓▓╫\n")
 		escreva("             ╓Φ▓▓▀███▓▄▄▄▄▓▓▌` ┘     --]╠▀▓▓████▓█▀▀╣▓▓▓▓▓▓█▓█▀▓╫╫▀╫╫▓╫\n")
 		escreva("         .≤Φ╫▀▀▀   ╙▀▀▀▀▀▀▀╨                        \"╧  ``      ``\"\"\"\"╙\n")
 		
-			escreva("\nVIGARIO AMELIA  AVANÇA")
+			escreva("\nVIGARIO AMELIA AVANÇA")
 			
 			enquanto (vida_inimigo > 0){
 			escrevaslow("|" + nome + ": " + vidabase, VELOCIDADE)
